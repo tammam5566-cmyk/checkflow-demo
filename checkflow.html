@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>CHECKFLOW — نسخة تجريبية</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CheckFlow">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+  :root { box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  body { margin:0; background:#020617; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+const { useState, useMemo, useRef } = React;
+
+window.storage = {
+  async get(key) {
+    const v = localStorage.getItem(key);
+    return v === null ? null : { key, value: v };
+  },
+  async set(key, value) {
+    localStorage.setItem(key, value);
+    return { key, value };
+  },
+};
+
+function makeIcon(emoji) {
+  return function Icon({ size = 16, className = "" }) {
+    return <span className={className} style={{ fontSize: size, lineHeight: 1, display: "inline-block" }}>{emoji}</span>;
+  };
+}
+const LayoutGrid = makeIcon("▦");
+const ListChecks = makeIcon("☑️");
+const Users = makeIcon("👥");
+const FileBarChart = makeIcon("📊");
+const Plus = makeIcon("➕");
+const Camera = makeIcon("📷");
+const CheckCircle2 = makeIcon("✅");
+const AlertTriangle = makeIcon("⚠️");
+const Clock = makeIcon("🕒");
+const X = makeIcon("✕");
+const LogOut = makeIcon("🚪");
+const Home = makeIcon("🏠");
+const ClipboardList = makeIcon("📋");
+const Bell = makeIcon("🔔");
+const ThermometerSun = makeIcon("🌡️");
+const Trash2 = makeIcon("🗑️");
+const Delete = makeIcon("⌫");
+const History = makeIcon("🕓");
+const Layers = makeIcon("🗂️");
+const Pencil = makeIcon("✏️");
+const Building2 = makeIcon("🏢");
+
+const FONT_IMPORT = `@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');`;
+const PRINT_CSS = `@media print {
+  @page { margin: 12mm; }
+  body { background: #fff !important; }
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}`;
+
+// ---------- seed data ----------
+
+const EMPLOYEES_SEED = [
+  { id: "u0", name: "محمد طارق", role: "admin", title: "مالك المنشأة", pin: "1111", shift: null, supervisorId: null, branchId: null,
+    nationality: "سعودي", mobile: "0501234561", iqamaNumber: null, iqamaExpiry: null, healthExpiry: isoFromToday(400) },
+  { id: "u2", name: "محمد شحاذة", role: "supervisor", title: "مشرف مطبخ", pin: "2222", shift: "صباحية", supervisorId: null, branchId: "b1",
+    nationality: "أردني", mobile: "0501234562", iqamaNumber: "2451178822", iqamaExpiry: isoFromToday(200), healthExpiry: isoFromToday(45) },
+  { id: "u1", name: "محمد العتيبي", role: "employee", title: "موظف مطبخ", pin: "3333", shift: "صباحية", supervisorId: "u2", branchId: "b1",
+    nationality: "مصري", mobile: "0501234563", iqamaNumber: "2398871145", iqamaExpiry: isoFromToday(-10), healthExpiry: isoFromToday(120) },
+  { id: "u3", name: "سارة القحطاني", role: "employee", title: "موظفة صالة", pin: "4444", shift: "مسائية", supervisorId: "u2", branchId: "b1",
+    nationality: "سعودي", mobile: "0501234564", iqamaNumber: null, iqamaExpiry: null, healthExpiry: isoFromToday(-5) },
+  { id: "u4", name: "خالد الحربي", role: "supervisor", title: "مشرف فرع جدة", pin: "5555", shift: "صباحية", supervisorId: null, branchId: "b2",
+    nationality: "يمني", mobile: "0501234565", iqamaNumber: "2287743301", iqamaExpiry: isoFromToday(30), healthExpiry: isoFromToday(200) },
+  { id: "u5", name: "منى الدوسري", role: "employee", title: "موظفة مطبخ", pin: "6666", shift: "صباحية", supervisorId: "u4", branchId: "b2",
+    nationality: "هندي", mobile: "0501234566", iqamaNumber: "2276651290", iqamaExpiry: isoFromToday(500), healthExpiry: isoFromToday(25) },
+  { id: "u6", name: "فهد المطيري", role: "supervisor", title: "مشرف فرع الدمام", pin: "7777", shift: "صباحية", supervisorId: null, branchId: "b3",
+    nationality: "سوري", mobile: "0501234567", iqamaNumber: "2334498821", iqamaExpiry: isoFromToday(90), healthExpiry: isoFromToday(90) },
+  { id: "u7", name: "ريم العنزي", role: "employee", title: "موظفة تحضير", pin: "8888", shift: "صباحية", supervisorId: "u6", branchId: "b3",
+    nationality: "باكستاني", mobile: "0501234568", iqamaNumber: "2312290087", iqamaExpiry: isoFromToday(-3), healthExpiry: isoFromToday(60) },
+  { id: "u8", name: "منير الشهري", role: "manager", title: "مدير التشغيل", pin: "9999", shift: null, supervisorId: null, branchId: null,
+    nationality: "سعودي", mobile: "0501234569", iqamaNumber: null, iqamaExpiry: null, healthExpiry: isoFromToday(250) },
+];
+
+// ---------- HR helpers ----------
+const HR_STATUS_META = {
+  active: { key: "active", label: "سارية", color: "#34D399", bg: "rgba(52,211,153,0.12)" },
+  soon: { key: "soon", label: "تنتهي قريباً", color: "#FBBF24", bg: "rgba(251,191,36,0.12)" },
+  expired: { key: "expired", label: "منتهية", color: "#F87171", bg: "rgba(248,113,113,0.12)" },
+  na: { key: "na", label: "لا ينطبق", color: "#7C9A95", bg: "rgba(124,154,149,0.12)" },
+};
+function hrExpiryDate(iso) {
+  if (!iso) return null;
+  return new Date(iso + "T00:00:00");
+}
+function isoFromToday(days) {
+  if (days === null || days === undefined) return null;
+  const d = new Date();
+  d.setDate(d.getDate() + days);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+function hrDaysUntil(iso) {
+  if (!iso) return null;
+  const target = hrExpiryDate(iso);
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  return Math.round((target - today) / 86400000);
+}
+function hrFmtDate(iso) {
+  if (!iso) return "—";
+  const [y, m, d] = iso.split("-");
+  return `${y}/${m}/${d}`;
+}
+function hrStatusFromDays(days, alertDays = 60) {
+  if (days === null || days === undefined) return HR_STATUS_META.na;
+  if (days < 0) return HR_STATUS_META.expired;
+  if (days <= alertDays) return HR_STATUS_META.soon;
+  return HR_STATUS_META.active;
+}
+function empCode(id) {
+  const n = String(id).replace(/\D/g, "").padStart(3, "0");
+  return `EMP-${n}`;
+}
+
+// ---------- Safety guidelines seed ----------
+let gIdCounter = 100;
+const nextGId = () => `g${gIdCounter++}`;
+
+const GUIDE_CATEGORIES_SEED = [
+  {
+    id: "temps", title: "درجات الحرارة", icon: "🌡️", color: "#2DD4BF",
+    items: [
+      { id: nextGId(), icon: "🧊", title: "التبريد (الثلاجة)", value: "5°م أو أقل", color: "#38BDF8" },
+      { id: nextGId(), icon: "❄️", title: "التجميد", value: "-18°م أو أقل", color: "#60A5FA" },
+      { id: nextGId(), icon: "🔥", title: "الحفظ الساخن للطعام المطهي", value: "63°م أو أعلى", color: "#FB923C" },
+      { id: nextGId(), icon: "♨️", title: "إعادة التسخين", value: "74°م أو أعلى", color: "#F87171" },
+      { id: nextGId(), icon: "⚠️", title: "منطقة الخطر (يُمنع بقاء الطعام فيها لأكثر من ساعتين)", value: "بين 5° و60°م", color: "#FBBF24" },
+    ],
+  },
+  {
+    id: "ppe", title: "معدات الوقاية الشخصية", icon: "🧤", color: "#A78BFA",
+    items: [
+      { id: nextGId(), icon: "🧤", title: "قبل استخدام معدات الطبخ", value: "يجب لبس القفازات", color: "#A78BFA" },
+      { id: nextGId(), icon: "😷", title: "أثناء التحضير والتقديم", value: "يجب لبس الكمامة", color: "#A78BFA" },
+      { id: nextGId(), icon: "🧢", title: "داخل منطقة المطبخ", value: "يجب لبس غطاء الرأس", color: "#A78BFA" },
+    ],
+  },
+  {
+    id: "hygiene", title: "النظافة الشخصية", icon: "🧼", color: "#34D399",
+    items: [
+      { id: nextGId(), icon: "🧴", title: "قبل دخول المطبخ", value: "تعقيم اليدين إلزامي", color: "#34D399" },
+      { id: nextGId(), icon: "🚿", title: "بعد استخدام دورة المياه", value: "غسل اليدين بالصابون 20 ثانية على الأقل", color: "#34D399" },
+      { id: nextGId(), icon: "🚭", title: "داخل منطقة الغذاء", value: "يُمنع التدخين والأكل والشرب", color: "#F87171" },
+    ],
+  },
+  {
+    id: "boards", title: "ألوان بورد التقطيع", icon: "🔪", color: "#F87171",
+    items: [
+      { id: nextGId(), icon: "🔪", title: "أحمر", value: "اللحوم الحمراء النيئة", color: "#EF4444" },
+      { id: nextGId(), icon: "🔪", title: "أصفر", value: "الدواجن النيئة", color: "#F5D90A" },
+      { id: nextGId(), icon: "🔪", title: "أزرق", value: "المأكولات البحرية النيئة", color: "#38BDF8" },
+      { id: nextGId(), icon: "🔪", title: "أخضر", value: "الخضروات والفواكه", color: "#22C55E" },
+      { id: nextGId(), icon: "🔪", title: "بني", value: "اللحوم المطهية", color: "#A16207" },
+      { id: nextGId(), icon: "🔪", title: "أبيض", value: "الألبان والمخبوزات", color: "#E5E7EB" },
+    ],
+  },
+  {
+    id: "storage", title: "تخزين المواد", icon: "📦", color: "#FBBF24",
+    items: [
+      { id: nextGId(), icon: "⬇️", title: "ترتيب الرفوف", value: "الجاهز للأكل أعلى، والنيء أسفل لمنع التلوث", color: "#FBBF24" },
+      { id: nextGId(), icon: "🏷️", title: "كل مادة مفتوحة", value: "تُكتب عليها تاريخ الفتح والصلاحية", color: "#FBBF24" },
+      { id: nextGId(), icon: "🔁", title: "مبدأ التصريف", value: "الأقدم أولاً (FIFO)", color: "#FBBF24" },
+    ],
+  },
+];
+
+const BRANCHES_SEED = [
+  { id: "b1", name: "الرياض" },
+  { id: "b2", name: "جدة" },
+  { id: "b3", name: "الدمام" },
+];
+
+const HR_ROLES_SEED = [
+  { pin: "1234", role: "viewer", label: "تصفح" },
+  { pin: "9090", role: "hr_admin", label: "HR (صلاحيات كاملة)" },
+];
+
+const DEPARTMENTS_SEED = [
+  { id: "d1", name: "المطبخ", branchId: "b1" },
+  { id: "d2", name: "الصالة", branchId: "b1" },
+  { id: "d3", name: "المستودع", branchId: "b1" },
+  { id: "d4", name: "المطبخ", branchId: "b2" },
+  { id: "d5", name: "الصالة", branchId: "b2" },
+  { id: "d6", name: "المطبخ", branchId: "b3" },
+  { id: "d7", name: "التحضير", branchId: "b3" },
+];
+
+const DAYS = ["اليوم", "غدًا", "بعد غد", "دائمة"];
+const todayKey = () => new Date().toDateString();
+const SHIFTS = ["صباحية", "مسائية"];
+
+const TASKS_SEED = [
+  {
+    id: "t1", title: "فحص درجة حرارة الثلاجات", departmentId: "d1", time: "10:00 ص",
+    day: "اليوم", shift: "صباحية",
+    assignedTo: "u1", standardLabel: "المعيار: 0–5°C", standardMin: 0, standardMax: 5, unit: "°C",
+    status: "done", result: "3.4", note: "", completedAt: "10:04 ص", verified: true, photo: null,
+  },
+  {
+    id: "t2", title: "تجهيز محطة العمل", departmentId: "d1", time: "11:00 ص",
+    day: "اليوم", shift: "صباحية",
+    assignedTo: "u1", standardLabel: "تجهيز كامل قبل بدء الذروة", unit: null,
+    status: "in_progress", result: "", note: "", completedAt: null, verified: false, photo: null,
+  },
+  {
+    id: "t3", title: "فحص دورات المياه", departmentId: "d2", time: "6:00 م",
+    day: "اليوم", shift: "مسائية",
+    assignedTo: "u3", standardLabel: "نظيفة وجاهزة للاستخدام", unit: null,
+    status: "late", result: "", note: "", completedAt: null, verified: false, photo: null,
+  },
+  {
+    id: "t4", title: "مراجعة المخزون الحرج", departmentId: "d3", time: "9:00 ص",
+    day: "اليوم", shift: "صباحية",
+    assignedTo: "u2", standardLabel: "لا نواقص بالمواد الحرجة", unit: null,
+    status: "not_started", result: "", note: "", completedAt: null, verified: false, photo: null,
+  },
+  {
+    id: "t5", title: "تنظيف ماكينة القهوة", departmentId: "d2", time: "7:00 م",
+    day: "اليوم", shift: "مسائية",
+    assignedTo: "u3", standardLabel: "نظيفة وجاهزة للتشغيل", unit: null,
+    status: "done", result: "مطابق", note: "", completedAt: "7:05 م", verified: false, photo: null,
+  },
+  {
+    id: "t6", title: "فحص درجة حرارة الثلاجات", departmentId: "d1", time: "10:00 ص",
+    day: "غدًا", shift: "صباحية",
+    assignedTo: "u1", standardLabel: "المعيار: 0–5°C", standardMin: 0, standardMax: 5, unit: "°C",
+    status: "not_started", result: "", note: "", completedAt: null, verified: false, photo: null,
+  },
+  {
+    id: "t7", title: "جرد المستلمات الأسبوعي", departmentId: "d3", time: "5:00 م",
+    day: "غدًا", shift: "مسائية",
+    assignedTo: "u3", standardLabel: "مطابقة الكميات مع فاتورة المورد", unit: null,
+    status: "not_started", result: "", note: "", completedAt: null, verified: false, photo: null,
+  },
+  {
+    id: "t8", title: "فحص النظافة العامة", departmentId: "d4", time: "9:00 ص",
+    day: "اليوم", shift: "صباحية",
+    assignedTo: "u5", standardLabel: "مطابقة لمعايير النظافة", unit: null,
+    status: "done", result: "مطابق", note: "", completedAt: "9:05 ص", verified: true, photo: null,
+  },
+  {
+    id: "t9", title: "تجهيز الطلبات الخارجية", departmentId: "d5", time: "12:00 م",
+    day: "اليوم", shift: "صباحية",
+    assignedTo: "u5", standardLabel: "تجهيز قبل موعد التوصيل", unit: null,
+    status: "done", result: "مطابق", note: "", completedAt: "12:10 م", verified: false, photo: null,
+  },
+  {
+    id: "t10", title: "فحص درجة حرارة الفريزر", departmentId: "d6", time: "8:00 ص",
+    day: "اليوم", shift: "صباحية",
+    assignedTo: "u7", standardLabel: "المعيار: -18 إلى -15°C", standardMin: -18, standardMax: -15, unit: "°C",
+    status: "non_compliant", result: "-9", note: "الفريزر يحتاج صيانة عاجلة", completedAt: "8:12 ص", verified: false, photo: null,
+  },
+  {
+    id: "t11", title: "تحضير المكونات اليومي", departmentId: "d7", time: "7:00 ص",
+    day: "اليوم", shift: "صباحية",
+    assignedTo: "u7", standardLabel: "جاهزية المكونات قبل بدء التشغيل", unit: null,
+    status: "late", result: "", note: "", completedAt: null, verified: false, photo: null,
+  },
+];
+
+const STATUS_META = {
+  done: { label: "مكتملة", color: "#34D399", bg: "rgba(52,211,153,0.12)" },
+  in_progress: { label: "قيد التنفيذ", color: "#2DD4BF", bg: "rgba(45,212,191,0.12)" },
+  late: { label: "متأخرة", color: "#FBBF24", bg: "rgba(251,191,36,0.12)" },
+  not_started: { label: "لم تبدأ", color: "#7C9A95", bg: "rgba(124,154,149,0.12)" },
+  non_compliant: { label: "غير مطابق", color: "#F87171", bg: "rgba(248,113,113,0.12)" },
+};
+
+const ROLE_LABEL = { admin: "مالك / إدارة", manager: "مدير", supervisor: "مشرف", employee: "موظف" };
+
+const DEFAULT_PERMS_BY_ROLE = {
+  manager: { overview: true, tasks: true, departments: true, branches: true, users: false, reports: true },
+  supervisor: {},
+  employee: {},
+};
+function getUserPerms(permissions, userId, role) {
+  return permissions.users?.[userId] || DEFAULT_PERMS_BY_ROLE[role] || {};
+}
+
+const ADMIN_TABS_META = [
+  { id: "overview", label: "نظرة عامة" },
+  { id: "tasks", label: "المهام" },
+  { id: "departments", label: "الأقسام" },
+  { id: "branches", label: "الفروع" },
+  { id: "users", label: "المستخدمون" },
+  { id: "reports", label: "التقارير" },
+];
+
+const HISTORY_SEED = [
+  { label: "قبل 3 أيام", completion: 74, quality: 71 },
+  { label: "قبل يومين", completion: 81, quality: 77 },
+  { label: "أمس", completion: 86, quality: 83 },
+];
+
+let idCounter = 100;
+const nextId = (prefix) => `${prefix}${idCounter++}`;
+const STORAGE_KEY = "checkflow-demo-state-v2";
+
+function CheckflowDemo() {
+  const [module, setModule] = useState(null);
+  const [hrRole, setHrRole] = useState(null);
+  const [guidelines, setGuidelines] = useState(GUIDE_CATEGORIES_SEED);
+  const [employees, setEmployees] = useState(EMPLOYEES_SEED);
+  const [tasks, setTasks] = useState(TASKS_SEED);
+  const [corrective, setCorrective] = useState([]);
+  const [departments, setDepartments] = useState(DEPARTMENTS_SEED);
+  const [branches, setBranches] = useState(BRANCHES_SEED);
+  const [permissions, setPermissions] = useState({ users: {} });
+  const [currentUserId, setCurrentUserId] = useState(null);
+  const [adminTab, setAdminTab] = useState("overview");
+  const [openTask, setOpenTask] = useState(null);
+  const [showAddTask, setShowAddTask] = useState(false);
+  const [showAddUser, setShowAddUser] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+
+  // load saved data — reusable so we can also refresh right at login time
+  function applyRecurringReset(tasksArr) {
+    const key = todayKey();
+    return tasksArr.map((t) =>
+      t.day === "دائمة" && (t.status === "done" || t.status === "non_compliant") && t.completedDateKey !== key
+        ? { ...t, status: "not_started", result: "", note: "", completedAt: null, verified: false, photo: null, completedDateKey: null }
+        : t
+    );
+  }
+
+  async function refreshFromStorage() {
+    try {
+      if (window.storage && window.storage.get) {
+        const res = await window.storage.get(STORAGE_KEY);
+        if (res && res.value) {
+          const data = JSON.parse(res.value);
+          if (data.employees) setEmployees(data.employees);
+          if (data.guidelines) setGuidelines(data.guidelines);
+          if (data.tasks) setTasks(applyRecurringReset(data.tasks));
+          if (data.corrective) setCorrective(data.corrective);
+          if (data.departments) setDepartments(data.departments);
+          if (data.branches) setBranches(data.branches);
+          if (data.permissions) setPermissions(data.permissions);
+          if (typeof data.idCounter === "number") idCounter = data.idCounter;
+        }
+      }
+    } catch (e) { /* no saved state yet — keep current defaults */ }
+  }
+
+  React.useEffect(() => {
+    let cancelled = false;
+    async function init() {
+      await refreshFromStorage();
+      if (!cancelled) setLoaded(true);
+    }
+    init();
+    return () => { cancelled = true; };
+  }, []);
+
+  // save on every change, once initial load has completed
+  async function saveNow() {
+    try {
+      if (window.storage && window.storage.set) {
+        await window.storage.set(STORAGE_KEY, JSON.stringify({ employees, tasks, corrective, departments, branches, permissions, guidelines, idCounter }));
+        return true;
+      }
+    } catch (e) { /* saving is best-effort */ }
+    return false;
+  }
+
+  React.useEffect(() => {
+    if (!loaded) return;
+    saveNow();
+  }, [employees, tasks, corrective, departments, branches, permissions, guidelines, loaded]);
+
+  // keep tabs/sessions in sync: if storage changes elsewhere, pick it up here too
+  React.useEffect(() => {
+    function onStorageEvent(e) {
+      if (e.key === STORAGE_KEY) refreshFromStorage();
+    }
+    window.addEventListener("storage", onStorageEvent);
+    return () => window.removeEventListener("storage", onStorageEvent);
+  }, []);
+
+  function handleLogin(userId) {
+    setCurrentUserId(userId);
+  }
+
+  const currentUser = employees.find((e) => e.id === currentUserId) || null;
+  const employeeName = (id) => employees.find((e) => e.id === id)?.name || "—";
+  const departmentName = (id) => departments.find((d) => d.id === id)?.name || "—";
+  const branchName = (id) => branches.find((b) => b.id === id)?.name || "—";
+
+  const kpis = useMemo(() => {
+    const total = tasks.length || 1;
+    const done = tasks.filter((t) => t.status === "done").length;
+    const nonCompliant = tasks.filter((t) => t.status === "non_compliant").length;
+    const late = tasks.filter((t) => t.status === "late").length;
+    const openNotes = corrective.filter((c) => c.status !== "closed").length;
+    const completion = Math.round((done / total) * 100);
+    const quality = Math.max(0, Math.min(100, completion - nonCompliant * 8));
+
+    const reviewable = tasks.filter((t) => t.status === "done" || t.status === "non_compliant");
+    const verifiedCount = reviewable.filter((t) => t.verified).length;
+    const approvalRate = reviewable.length ? Math.round((verifiedCount / reviewable.length) * 100) : null;
+
+    const closedWithTimes = corrective.filter((c) => c.status === "closed" && c.openedAt && c.closedAt);
+    const avgCorrectiveMinutes = closedWithTimes.length
+      ? Math.round(closedWithTimes.reduce((sum, c) => sum + (c.closedAt - c.openedAt) / 60000, 0) / closedWithTimes.length)
+      : null;
+
+    return { completion, quality, late, openNotes, approvalRate, avgCorrectiveMinutes };
+  }, [tasks, corrective]);
+
+  function addTask({ title, departmentId, time, assignedTo, standardLabel, day, shift }) {
+    setTasks((prev) => [
+      ...prev,
+      { id: nextId("t"), title, departmentId, time, assignedTo, standardLabel: standardLabel || "—",
+        day, shift, unit: null, status: "not_started", result: "", note: "", completedAt: null,
+        completedDateKey: null, verified: false, photo: null },
+    ]);
+    setShowAddTask(false);
+  }
+
+  function addEmployee({ name, title, role, pin, shift, supervisorId, branchId }) {
+    const id = nextId("u");
+    setEmployees((prev) => [...prev, { id, name, title, role, pin, shift, supervisorId, branchId }]);
+    setShowAddUser(false);
+  }
+
+  function removeEmployee(id) {
+    setEmployees((prev) => prev.filter((e) => e.id !== id));
+  }
+
+  function addDepartment(name, branchId) {
+    setDepartments((prev) => [...prev, { id: nextId("d"), name, branchId }]);
+  }
+
+  function updateDepartment(id, name) {
+    setDepartments((prev) => prev.map((d) => (d.id === id ? { ...d, name } : d)));
+  }
+
+  function removeDepartment(id) {
+    setDepartments((prev) => prev.filter((d) => d.id !== id));
+  }
+
+  function addBranch(name) {
+    setBranches((prev) => [...prev, { id: nextId("b"), name }]);
+  }
+
+  function updateBranch(id, name) {
+    setBranches((prev) => prev.map((b) => (b.id === id ? { ...b, name } : b)));
+  }
+
+  function removeBranch(id) {
+    setBranches((prev) => prev.filter((b) => b.id !== id));
+  }
+
+  function updateUserPermission(userId, role, tabId, value) {
+    setPermissions((prev) => {
+      const current = prev.users?.[userId] || DEFAULT_PERMS_BY_ROLE[role] || {};
+      return { ...prev, users: { ...prev.users, [userId]: { ...current, [tabId]: value } } };
+    });
+  }
+
+  function removeTask(id) {
+    setTasks((prev) => prev.filter((t) => t.id !== id));
+  }
+
+  function submitTaskResult(taskId, { result, compliant, note, photo }) {
+    const now = new Date().toLocaleTimeString("ar-SA", { hour: "2-digit", minute: "2-digit" });
+    setTasks((prev) =>
+      prev.map((t) =>
+        t.id === taskId
+          ? { ...t, result, status: compliant ? "done" : "non_compliant", note, completedAt: now, completedDateKey: todayKey(), verified: false, photo }
+          : t
+      )
+    );
+    if (!compliant) {
+      setCorrective((prev) => [
+        ...prev,
+        { id: nextId("c"), taskId, title: tasks.find((t) => t.id === taskId)?.title, note,
+          responsible: employeeName(tasks.find((t) => t.id === taskId)?.assignedTo),
+          due: "اليوم — 2:00 م", status: "open", openedAt: Date.now(), closedAt: null },
+      ]);
+    }
+    setOpenTask(null);
+  }
+
+  function verifyTask(taskId) {
+    setTasks((prev) => prev.map((t) => (t.id === taskId ? { ...t, verified: true } : t)));
+  }
+
+  function closeCorrective(id) {
+    setCorrective((prev) => prev.map((c) => (c.id === id ? { ...c, status: "closed", closedAt: Date.now() } : c)));
+  }
+
+  function addHREmployee({ name, title, branchId, nationality, mobile, iqamaNumber, iqamaExpiry, healthExpiry }) {
+    const id = nextId("u");
+    setEmployees((prev) => [...prev, {
+      id, name, title, role: "employee", pin: null, shift: null, supervisorId: null, branchId,
+      nationality, mobile, iqamaNumber, iqamaExpiry, healthExpiry,
+    }]);
+  }
+  function updateHREmployee(id, patch) {
+    setEmployees((prev) => prev.map((e) => e.id === id ? { ...e, ...patch } : e));
+  }
+  function removeHREmployee(id) {
+    setEmployees((prev) => prev.filter((e) => e.id !== id));
+  }
+
+  function addGuideItem(categoryId, item) {
+    setGuidelines((prev) => prev.map((c) => c.id === categoryId ? { ...c, items: [...c.items, { id: nextGId(), ...item }] } : c));
+  }
+  function updateGuideItem(categoryId, itemId, patch) {
+    setGuidelines((prev) => prev.map((c) => c.id !== categoryId ? c : {
+      ...c, items: c.items.map((it) => it.id === itemId ? { ...it, ...patch } : it),
+    }));
+  }
+  function removeGuideItem(categoryId, itemId) {
+    setGuidelines((prev) => prev.map((c) => c.id !== categoryId ? c : { ...c, items: c.items.filter((it) => it.id !== itemId) }));
+  }
+  function addGuideCategory(title, icon) {
+    setGuidelines((prev) => [...prev, { id: nextGId(), title, icon: icon || "📌", color: "#2DD4BF", items: [] }]);
+  }
+
+  return (
+    <div dir="rtl" style={{ fontFamily: "'Cairo', sans-serif" }} className="min-h-screen w-full bg-slate-950 text-slate-100">
+      <style>{FONT_IMPORT}</style>
+      <style>{PRINT_CSS}</style>
+
+      {module === null && <ModuleSelector onSelect={setModule} />}
+
+      {module === "hr" && (
+        hrRole === null ? (
+          <HRLoginScreen onLogin={setHrRole} onBack={() => setModule(null)} />
+        ) : (
+          <HRModule employees={employees} branches={branches} role={hrRole}
+            onBack={() => { setModule(null); setHrRole(null); }}
+            onSwitchUser={() => setHrRole(null)}
+            onAdd={addHREmployee} onUpdate={updateHREmployee} onRemove={removeHREmployee} />
+        )
+      )}
+
+      {module === "guides" && (
+        <GuidelinesModule guidelines={guidelines} onBack={() => setModule(null)}
+          onAddItem={addGuideItem} onUpdateItem={updateGuideItem} onRemoveItem={removeGuideItem}
+          onAddCategory={addGuideCategory} />
+      )}
+
+      {module === "ops" && (!currentUser ? (
+        <LoginScreen employees={employees} onLogin={handleLogin} onBack={() => setModule(null)} />
+      ) : (
+        <>
+          <TopBar user={currentUser} onSave={saveNow} onLogout={async () => { await saveNow(); setCurrentUserId(null); }} />
+
+          {(currentUser.role === "admin" || currentUser.role === "manager") && (
+            <AdminDashboard
+              role={currentUser.role} perms={getUserPerms(permissions, currentUser.id, currentUser.role)} permissions={permissions}
+              tab={adminTab} setTab={setAdminTab}
+              employees={employees} tasks={tasks} corrective={corrective} kpis={kpis}
+              departments={departments} branches={branches}
+              employeeName={employeeName} departmentName={departmentName} branchName={branchName}
+              onAddTask={() => setShowAddTask(true)}
+              onRemoveTask={removeTask}
+              onAddUser={() => setShowAddUser(true)}
+              onRemoveEmployee={removeEmployee}
+              onCloseCorrective={closeCorrective}
+              onAddDepartment={addDepartment}
+              onUpdateDepartment={updateDepartment}
+              onRemoveDepartment={removeDepartment}
+              onAddBranch={addBranch}
+              onUpdateBranch={updateBranch}
+              onRemoveBranch={removeBranch}
+              onUpdatePermission={updateUserPermission}
+            />
+          )}
+
+          {currentUser.role === "supervisor" && (
+            <ExtraAccessShell user={currentUser} permissions={permissions}
+              tasks={tasks} employees={employees} corrective={corrective} kpis={kpis}
+              departments={departments} branches={branches}
+              employeeName={employeeName} departmentName={departmentName} branchName={branchName}
+              onCloseCorrective={closeCorrective}>
+              <SupervisorDashboard
+                user={currentUser}
+                employees={employees}
+                tasks={tasks} corrective={corrective} employeeName={employeeName}
+                departmentName={departmentName}
+                onCloseCorrective={closeCorrective}
+                onVerifyTask={verifyTask}
+                onOpenTask={(t) => setOpenTask(t)}
+              />
+            </ExtraAccessShell>
+          )}
+
+          {currentUser.role === "employee" && (
+            <ExtraAccessShell user={currentUser} permissions={permissions}
+              tasks={tasks} employees={employees} corrective={corrective} kpis={kpis}
+              departments={departments} branches={branches}
+              employeeName={employeeName} departmentName={departmentName} branchName={branchName}
+              onCloseCorrective={closeCorrective}>
+              <EmployeeApp user={currentUser} tasks={tasks} departmentName={departmentName} onOpenTask={(t) => setOpenTask(t)} />
+            </ExtraAccessShell>
+          )}
+        </>
+      ))}
+
+      {showAddTask && (
+        <AddTaskModal employees={employees.filter(e => e.role !== "admin" && e.role !== "manager")} departments={departments}
+          onClose={() => setShowAddTask(false)} onSubmit={addTask} />
+      )}
+      {showAddUser && <AddUserModal employees={employees} branches={branches} onClose={() => setShowAddUser(false)} onSubmit={addEmployee} />}
+      {openTask && (
+        <TaskExecuteModal task={openTask} departmentName={departmentName} onClose={() => setOpenTask(null)} onSubmit={submitTaskResult} />
+      )}
+    </div>
+  );
+}
+
+// ---------------- Module selector ----------------
+
+function ModuleSelector({ onSelect }) {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center px-6">
+      <div className="w-14 h-14 rounded-full border-[3px] border-teal-400 flex items-center justify-center mb-3">
+        <CheckCircle2 size={26} className="text-teal-400" />
+      </div>
+      <div className="font-extrabold text-2xl mb-1 tracking-tight">CHECKFLOW</div>
+      <div className="text-sm text-slate-500 mb-10">اختر القسم الذي تريد الدخول إليه</div>
+
+      <div className="w-full max-w-sm space-y-4">
+        <button onClick={() => onSelect("ops")}
+          className="w-full text-right bg-slate-900 border border-teal-900/50 rounded-2xl p-5 flex items-center justify-between hover:border-teal-500 active:scale-[0.98] transition">
+          <div>
+            <div className="font-extrabold text-lg mb-1">قسم التشغيل</div>
+            <div className="text-xs text-slate-500">المهام اليومية، التحقق، التقارير، الفروع</div>
+          </div>
+          <div className="w-12 h-12 rounded-xl bg-teal-950 border border-teal-800 flex items-center justify-center shrink-0">
+            <ListChecks size={22} className="text-teal-400" />
+          </div>
+        </button>
+
+        <button onClick={() => onSelect("hr")}
+          className="w-full text-right bg-slate-900 border border-teal-900/50 rounded-2xl p-5 flex items-center justify-between hover:border-teal-500 active:scale-[0.98] transition">
+          <div>
+            <div className="font-extrabold text-lg mb-1">شؤون الموظفين</div>
+            <div className="text-xs text-slate-500">بيانات الموظفين، الإقامات، البطاقات الصحية</div>
+          </div>
+          <div className="w-12 h-12 rounded-xl bg-teal-950 border border-teal-800 flex items-center justify-center shrink-0">
+            <Users size={22} className="text-teal-400" />
+          </div>
+        </button>
+
+        <button onClick={() => onSelect("guides")}
+          className="w-full text-right bg-slate-900 border border-teal-900/50 rounded-2xl p-5 flex items-center justify-between hover:border-teal-500 active:scale-[0.98] transition">
+          <div>
+            <div className="font-extrabold text-lg mb-1">إرشادات ومعايير السلامة</div>
+            <div className="text-xs text-slate-500">درجات الحرارة، النظافة، ألوان بورد التقطيع</div>
+          </div>
+          <div className="w-12 h-12 rounded-xl bg-teal-950 border border-teal-800 flex items-center justify-center shrink-0">
+            <ThermometerSun size={22} className="text-teal-400" />
+          </div>
+        </button>
+      </div>
+
+      <div className="mt-10 text-[11px] text-slate-600">نسخة تجريبية للعرض</div>
+    </div>
+  );
+}
+
+// ---------------- HR module ----------------
+
+function HRLoginScreen({ onLogin, onBack }) {
+  const [pin, setPin] = useState("");
+  const [error, setError] = useState("");
+
+  function press(d) {
+    if (pin.length >= 4) return;
+    const next = pin + d;
+    setPin(next);
+    setError("");
+    if (next.length === 4) {
+      const match = HR_ROLES_SEED.find((r) => r.pin === next);
+      if (match) {
+        setTimeout(() => onLogin(match.role), 150);
+      } else {
+        setTimeout(() => { setError("رقم سري غير صحيح"); setPin(""); }, 300);
+      }
+    }
+  }
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 relative">
+      <button onClick={onBack} className="absolute top-5 right-5 text-xs text-slate-500 hover:text-teal-400 flex items-center gap-1">
+        <span>→</span> الوحدات
+      </button>
+      <div className="w-14 h-14 rounded-full border-[3px] border-teal-400 flex items-center justify-center mb-3">
+        <Users size={26} className="text-teal-400" />
+      </div>
+      <div className="font-extrabold text-xl mb-1 tracking-tight">CHECKFLOW</div>
+      <div className="text-xs text-teal-400 font-bold mb-1">شؤون الموظفين</div>
+      <div className="text-sm text-teal-600/80 mb-10">أدخل رقمك السري للدخول</div>
+
+      <div className="flex gap-3 mb-3">
+        {[0, 1, 2, 3].map((i) => (
+          <div key={i} className={`w-4 h-4 rounded-full border-2 ${pin.length > i ? "bg-teal-400 border-teal-400" : "border-slate-700"}`} />
+        ))}
+      </div>
+      <div className="h-5 text-xs text-red-400 mb-4">{error}</div>
+
+      <div className="grid grid-cols-3 gap-4">
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
+          <button key={n} onClick={() => press(String(n))}
+            className="w-16 h-16 rounded-full bg-slate-900 border border-slate-800 text-xl font-bold hover:bg-slate-800 active:scale-95 transition">
+            {n}
+          </button>
+        ))}
+        <div />
+        <button onClick={() => press("0")}
+          className="w-16 h-16 rounded-full bg-slate-900 border border-slate-800 text-xl font-bold hover:bg-slate-800 active:scale-95 transition">
+          0
+        </button>
+        <button onClick={() => setPin(pin.slice(0, -1))} className="w-16 h-16 rounded-full flex items-center justify-center text-slate-500 hover:text-slate-300">
+          <Delete size={20} />
+        </button>
+      </div>
+
+      <div className="mt-10 text-xs text-slate-600 text-center leading-6">
+        للتجربة — تصفح فقط: 1234 &nbsp;·&nbsp; HR (كل الصلاحيات): 9090
+      </div>
+    </div>
+  );
+}
+
+function HRModule({ employees, branches, role, onBack, onSwitchUser, onAdd, onUpdate, onRemove }) {
+  const canEdit = role === "hr_admin";
+  const [query, setQuery] = useState("");
+  const [openEmp, setOpenEmp] = useState(null);
+  const [showAdd, setShowAdd] = useState(false);
+  const [editingEmp, setEditingEmp] = useState(null);
+  const branchName = (id) => branches.find((b) => b.id === id)?.name || "—";
+
+  const enriched = useMemo(() => employees.map((e) => {
+    const iqamaDays = hrDaysUntil(e.iqamaExpiry);
+    const healthDays = hrDaysUntil(e.healthExpiry);
+    return {
+      ...e,
+      iqamaDays, healthDays,
+      iqamaStatus: hrStatusFromDays(iqamaDays),
+      healthStatus: hrStatusFromDays(healthDays),
+    };
+  }), [employees]);
+
+  const filtered = useMemo(() => {
+    const q = query.trim();
+    if (!q) return enriched;
+    return enriched.filter((e) => e.name.includes(q) || empCode(e.id).toLowerCase().includes(q.toLowerCase()));
+  }, [enriched, query]);
+
+  const attention = useMemo(() =>
+    enriched
+      .filter((e) => e.iqamaStatus.key !== "active" && e.iqamaStatus.key !== "na" || e.healthStatus.key !== "active" && e.healthStatus.key !== "na")
+      .map((e) => {
+        const worst = [
+          { type: "الإقامة", days: e.iqamaDays, status: e.iqamaStatus },
+          { type: "البطاقة الصحية", days: e.healthDays, status: e.healthStatus },
+        ].filter((x) => x.status.key === "expired" || x.status.key === "soon")
+         .sort((a, b) => a.days - b.days)[0];
+        return { emp: e, worst };
+      })
+      .filter((x) => x.worst)
+      .sort((a, b) => a.worst.days - b.worst.days)
+  , [enriched]);
+
+  const kpi = useMemo(() => {
+    const total = enriched.length;
+    const expiredCount = enriched.filter((e) => e.iqamaStatus.key === "expired" || e.healthStatus.key === "expired").length;
+    const soonCount = enriched.filter((e) => e.iqamaStatus.key === "soon" || e.healthStatus.key === "soon").length;
+    const okCount = total - expiredCount - soonCount;
+    return { total, expiredCount, soonCount, okCount };
+  }, [enriched]);
+
+  return (
+    <div className="min-h-screen w-full max-w-lg mx-auto px-4 pb-10">
+      <div className="sticky top-0 z-30 bg-slate-950/90 backdrop-blur border-b border-teal-900/40 -mx-4 px-4 py-3 mb-4 flex items-center justify-between">
+        <button onClick={onBack} className="text-xs text-slate-500 hover:text-teal-400 flex items-center gap-1">
+          <span>→</span> الوحدات
+        </button>
+        <div className="flex items-center gap-2">
+          <button onClick={onSwitchUser} className="text-[10px] font-bold px-2 py-1 rounded-full border border-slate-800 text-slate-400 hover:border-teal-500 hover:text-teal-400">
+            {canEdit ? "HR" : "تصفح"} ↻
+          </button>
+          <div className="font-extrabold text-sm">شؤون الموظفين</div>
+          <div className="w-7 h-7 rounded-full border-2 border-teal-400 flex items-center justify-center">
+            <CheckCircle2 size={14} className="text-teal-400" />
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-4 gap-2 mb-4">
+        {[
+          { label: "الإجمالي", value: kpi.total, color: "#5EEAD4" },
+          { label: "سارية", value: kpi.okCount, color: "#34D399" },
+          { label: "قريبة", value: kpi.soonCount, color: "#FBBF24" },
+          { label: "منتهية", value: kpi.expiredCount, color: "#F87171" },
+        ].map((c) => (
+          <div key={c.label} className="bg-slate-900 border border-slate-800 rounded-xl py-3 text-center">
+            <div className="text-lg font-extrabold" style={{ color: c.color }}>{c.value}</div>
+            <div className="text-[10px] text-slate-500 mt-0.5">{c.label}</div>
+          </div>
+        ))}
+      </div>
+
+      {attention.length > 0 && (
+        <div className="mb-5">
+          <div className="text-xs font-bold text-amber-400 mb-2">يحتاج انتباه</div>
+          <div className="space-y-2">
+            {attention.map(({ emp, worst }) => (
+              <button key={emp.id} onClick={() => setOpenEmp(emp)}
+                className="w-full text-right rounded-xl border border-slate-800 bg-slate-900/60 p-3.5 flex items-center justify-between">
+                <div>
+                  <div className="font-bold text-sm mb-1">{emp.name}</div>
+                  <div className="text-xs text-slate-500">{worst.type} · {emp.title}</div>
+                </div>
+                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0" style={{ color: worst.status.color, background: worst.status.bg }}>
+                  {worst.status.label}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="mb-3">
+        <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="ابحث بالاسم أو الرقم الوظيفي (EMP-001)"
+          className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-slate-100 outline-none focus:border-teal-500" />
+      </div>
+
+      {canEdit && (
+        <button onClick={() => setShowAdd(true)}
+          className="w-full flex items-center justify-center gap-1.5 bg-teal-400 text-slate-950 text-sm font-bold py-2.5 rounded-xl mb-4">
+          <Plus size={16} /> إضافة موظف جديد
+        </button>
+      )}
+
+      <div className="space-y-2">
+        {filtered.map((e) => (
+          <button key={e.id} onClick={() => setOpenEmp(e)}
+            className="w-full text-right rounded-xl border border-slate-800 bg-slate-900/60 p-3.5">
+            <div className="flex items-center justify-between mb-1.5">
+              <div className="font-bold text-sm">{e.name}</div>
+              <span className="text-[10px] text-slate-500">{empCode(e.id)}</span>
+            </div>
+            <div className="text-xs text-slate-500 mb-2">{e.title} · {branchName(e.branchId)}</div>
+            <div className="flex gap-1.5">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ color: e.iqamaStatus.color, background: e.iqamaStatus.bg }}>
+                إقامة: {e.iqamaStatus.label}
+              </span>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ color: e.healthStatus.color, background: e.healthStatus.bg }}>
+                صحية: {e.healthStatus.label}
+              </span>
+            </div>
+          </button>
+        ))}
+        {filtered.length === 0 && (
+          <div className="text-center text-sm text-slate-600 py-10">لا يوجد موظف مطابق</div>
+        )}
+      </div>
+
+      {showAdd && (
+        <AddHREmployeeModal branches={branches} onClose={() => setShowAdd(false)}
+          onSubmit={(data) => { onAdd(data); setShowAdd(false); }} />
+      )}
+
+      {openEmp && (
+        <div className="fixed inset-0 z-40 bg-black/60 flex items-end sm:items-center justify-center" onClick={() => setOpenEmp(null)}>
+          <div className="bg-slate-950 border border-slate-800 rounded-t-2xl sm:rounded-2xl w-full max-w-sm p-5" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <div className="font-extrabold text-lg">{openEmp.name}</div>
+              <button onClick={() => setOpenEmp(null)} className="text-slate-500 hover:text-slate-300"><X size={18} /></button>
+            </div>
+            <div className="space-y-2.5 text-sm">
+              {[
+                ["الرقم الوظيفي", empCode(openEmp.id)],
+                ["المسمى الوظيفي", openEmp.title],
+                ["الفرع", branchName(openEmp.branchId)],
+                ["الجنسية", openEmp.nationality],
+                ["رقم الجوال", openEmp.mobile],
+                ["رقم الإقامة", openEmp.iqamaNumber || "لا ينطبق"],
+              ].map(([label, value]) => (
+                <div key={label} className="flex items-center justify-between border-b border-slate-900 pb-2.5">
+                  <span className="text-slate-500">{label}</span>
+                  <span className="font-bold">{value}</span>
+                </div>
+              ))}
+              <div className="flex items-center justify-between border-b border-slate-900 pb-2.5">
+                <span className="text-slate-500">تاريخ انتهاء الإقامة</span>
+                <span className="font-bold flex items-center gap-2">
+                  {hrFmtDate(openEmp.iqamaExpiry)}
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ color: openEmp.iqamaStatus.color, background: openEmp.iqamaStatus.bg }}>
+                    {openEmp.iqamaStatus.label}
+                  </span>
+                </span>
+              </div>
+              <div className="flex items-center justify-between pb-1">
+                <span className="text-slate-500">تاريخ انتهاء البطاقة الصحية</span>
+                <span className="font-bold flex items-center gap-2">
+                  {hrFmtDate(openEmp.healthExpiry)}
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ color: openEmp.healthStatus.color, background: openEmp.healthStatus.bg }}>
+                    {openEmp.healthStatus.label}
+                  </span>
+                </span>
+              </div>
+            </div>
+            {canEdit && (
+              <div className="flex gap-2 mt-4">
+                <button onClick={() => { setEditingEmp(openEmp); setOpenEmp(null); }}
+                  className="flex-1 flex items-center justify-center gap-1.5 border border-slate-800 text-slate-300 text-sm font-bold py-2.5 rounded-xl">
+                  <Pencil size={14} /> تعديل
+                </button>
+                <button onClick={() => { if (confirm(`حذف ${openEmp.name}؟`)) { onRemove(openEmp.id); setOpenEmp(null); } }}
+                  className="flex-1 flex items-center justify-center gap-1.5 border border-red-900 text-red-400 text-sm font-bold py-2.5 rounded-xl">
+                  <Trash2 size={14} /> حذف
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {editingEmp && (
+        <AddHREmployeeModal branches={branches} initial={editingEmp} onClose={() => setEditingEmp(null)}
+          onSubmit={(data) => { onUpdate(editingEmp.id, data); setEditingEmp(null); }} />
+      )}
+    </div>
+  );
+}
+
+function AddHREmployeeModal({ branches, initial, onClose, onSubmit }) {
+  const [name, setName] = useState(initial?.name || "");
+  const [title, setTitle] = useState(initial?.title || "");
+  const [nationality, setNationality] = useState(initial?.nationality || "");
+  const [branchId, setBranchId] = useState(initial?.branchId || branches[0]?.id || "");
+  const [mobile, setMobile] = useState(initial?.mobile || "");
+  const [iqamaNumber, setIqamaNumber] = useState(initial?.iqamaNumber || "");
+  const [iqamaExpiry, setIqamaExpiry] = useState(initial?.iqamaExpiry || "");
+  const [healthExpiry, setHealthExpiry] = useState(initial?.healthExpiry || "");
+  const canSubmit = name.trim().length > 0;
+
+  return (
+    <div className="fixed inset-0 z-40 bg-black/60 flex items-end sm:items-center justify-center" onClick={onClose}>
+      <div className="bg-slate-950 border border-slate-800 rounded-t-2xl sm:rounded-2xl w-full max-w-sm p-5 max-h-[85vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between mb-4">
+          <div className="font-extrabold text-lg">{initial ? "تعديل بيانات الموظف" : "إضافة موظف جديد"}</div>
+          <button onClick={onClose} className="text-slate-500 hover:text-slate-300"><X size={18} /></button>
+        </div>
+        <div className="space-y-3">
+          <div>
+            <label className="text-xs text-slate-500 mb-1 block">اسم الموظف *</label>
+            <input value={name} onChange={(e) => setName(e.target.value)} className={inputCls} placeholder="مثال: عبدالله محمد" />
+          </div>
+          <div>
+            <label className="text-xs text-slate-500 mb-1 block">المسمى الوظيفي</label>
+            <input value={title} onChange={(e) => setTitle(e.target.value)} className={inputCls} placeholder="مثال: موظف مطبخ" />
+          </div>
+          <div>
+            <label className="text-xs text-slate-500 mb-1 block">الفرع</label>
+            <select value={branchId} onChange={(e) => setBranchId(e.target.value)} className={inputCls}>
+              {branches.map((b) => <option key={b.id} value={b.id}>{b.name}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className="text-xs text-slate-500 mb-1 block">الجنسية</label>
+            <input value={nationality} onChange={(e) => setNationality(e.target.value)} className={inputCls} placeholder="مثال: مصري" />
+          </div>
+          <div>
+            <label className="text-xs text-slate-500 mb-1 block">رقم الجوال</label>
+            <input value={mobile} onChange={(e) => setMobile(e.target.value)} className={inputCls} placeholder="05xxxxxxxx" />
+          </div>
+          <div>
+            <label className="text-xs text-slate-500 mb-1 block">رقم الإقامة (اتركه فارغاً لموظف سعودي)</label>
+            <input value={iqamaNumber} onChange={(e) => setIqamaNumber(e.target.value)} className={inputCls} placeholder="رقم الإقامة" />
+          </div>
+          <div>
+            <label className="text-xs text-slate-500 mb-1 block">تاريخ انتهاء الإقامة</label>
+            <input type="date" value={iqamaExpiry} onChange={(e) => setIqamaExpiry(e.target.value)} className={inputCls} />
+          </div>
+          <div>
+            <label className="text-xs text-slate-500 mb-1 block">تاريخ انتهاء البطاقة الصحية</label>
+            <input type="date" value={healthExpiry} onChange={(e) => setHealthExpiry(e.target.value)} className={inputCls} />
+          </div>
+          <button disabled={!canSubmit}
+            onClick={() => onSubmit({
+              name: name.trim(), title: title.trim() || "—", branchId, nationality: nationality.trim() || "—",
+              mobile: mobile.trim() || "—", iqamaNumber: iqamaNumber.trim() || null,
+              iqamaExpiry: iqamaExpiry || null, healthExpiry: healthExpiry || null,
+            })}
+            className="w-full bg-teal-400 disabled:opacity-40 text-slate-950 font-bold py-2.5 rounded-xl mt-2">
+            {initial ? "حفظ التعديلات" : "حفظ الموظف"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ---------------- Safety guidelines module ----------------
+
+function GuidelinesModule({ guidelines, onBack, onAddItem, onUpdateItem, onRemoveItem, onAddCategory }) {
+  const [activeCat, setActiveCat] = useState(guidelines[0]?.id);
+  const [editMode, setEditMode] = useState(false);
+  const [showAddItem, setShowAddItem] = useState(false);
+  const [editingItem, setEditingItem] = useState(null);
+  const [showAddCat, setShowAddCat] = useState(false);
+  const [newCatTitle, setNewCatTitle] = useState("");
+  const [newCatIcon, setNewCatIcon] = useState("📌");
+
+  const cat = guidelines.find((c) => c.id === activeCat) || guidelines[0];
+
+  return (
+    <div className="min-h-screen w-full max-w-lg mx-auto px-4 pb-10">
+      <div className="print:hidden sticky top-0 z-30 bg-slate-950/90 backdrop-blur border-b border-teal-900/40 -mx-4 px-4 py-3 mb-4 flex items-center justify-between">
+        <button onClick={onBack} className="text-xs text-slate-500 hover:text-teal-400 flex items-center gap-1">
+          <span>→</span> الوحدات
+        </button>
+        <div className="flex items-center gap-2">
+          <div className="font-extrabold text-sm">إرشادات ومعايير السلامة</div>
+          <div className="w-7 h-7 rounded-full border-2 border-teal-400 flex items-center justify-center">
+            <CheckCircle2 size={14} className="text-teal-400" />
+          </div>
+        </div>
+      </div>
+
+      <div className="print:hidden flex items-center gap-2 overflow-x-auto pb-1 mb-4 -mx-4 px-4">
+        {guidelines.map((c) => (
+          <button key={c.id} onClick={() => setActiveCat(c.id)}
+            className={`shrink-0 text-xs px-3.5 py-1.5 rounded-full border flex items-center gap-1 ${activeCat === c.id ? "bg-teal-400 text-slate-950 font-bold border-teal-400" : "border-slate-800 text-slate-400"}`}>
+            <span>{c.icon}</span> {c.title}
+          </button>
+        ))}
+        <button onClick={() => setShowAddCat(true)}
+          className="shrink-0 text-xs px-3 py-1.5 rounded-full border border-dashed border-slate-700 text-slate-500">
+          <Plus size={12} className="inline" /> قسم
+        </button>
+      </div>
+
+      {cat && (
+        <>
+          <div className="print:hidden flex items-center justify-between mb-3">
+            <div className="font-extrabold text-base flex items-center gap-1.5">
+              <span>{cat.icon}</span> {cat.title}
+            </div>
+            <div className="flex items-center gap-2">
+              <button onClick={() => window.print()}
+                className="text-xs font-bold px-3 py-1.5 rounded-lg border border-teal-800 text-teal-400 hover:bg-teal-950">
+                🖨️ طباعة
+              </button>
+              <button onClick={() => setEditMode((v) => !v)}
+                className={`text-xs font-bold px-3 py-1.5 rounded-lg border ${editMode ? "bg-teal-400 text-slate-950 border-teal-400" : "border-slate-800 text-slate-400"}`}>
+                {editMode ? "تم" : "تعديل"}
+              </button>
+            </div>
+          </div>
+
+          <div className="print:hidden space-y-2">
+            {cat.items.map((it) => (
+              <div key={it.id} className="rounded-xl border border-slate-800 bg-slate-900/60 p-3.5 flex items-center gap-3"
+                style={{ borderInlineStart: `4px solid ${it.color}` }}>
+                <div className="text-2xl shrink-0">{it.icon}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-bold text-sm">{it.title}</div>
+                  <div className="text-xs text-slate-400 mt-0.5">{it.value}</div>
+                </div>
+                {editMode && (
+                  <div className="flex items-center gap-2 shrink-0">
+                    <button onClick={() => setEditingItem(it)} className="text-slate-500 hover:text-teal-400"><Pencil size={15} /></button>
+                    <button onClick={() => onRemoveItem(cat.id, it.id)} className="text-slate-500 hover:text-red-400"><Trash2 size={15} /></button>
+                  </div>
+                )}
+              </div>
+            ))}
+            {cat.items.length === 0 && (
+              <div className="text-center text-sm text-slate-600 py-10">لا توجد إرشادات بهذا القسم بعد</div>
+            )}
+          </div>
+
+          {editMode && (
+            <button onClick={() => setShowAddItem(true)}
+              className="print:hidden w-full flex items-center justify-center gap-1.5 bg-teal-400 text-slate-950 text-sm font-bold py-2.5 rounded-xl mt-3">
+              <Plus size={16} /> إضافة إرشاد لهذا القسم
+            </button>
+          )}
+
+          {/* Printable poster (only the active category) */}
+          <div className="hidden print:block bg-white text-slate-900">
+            <div className="flex items-center gap-3 mb-6 border-b-4 pb-4" style={{ borderColor: cat.color }}>
+              <div className="text-5xl">{cat.icon}</div>
+              <div className="text-3xl font-extrabold">{cat.title}</div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {cat.items.map((it) => (
+                <div key={it.id} className="rounded-2xl p-5" style={{ border: `3px solid ${it.color}` }}>
+                  <div className="text-4xl mb-2">{it.icon}</div>
+                  <div className="font-extrabold text-lg mb-1">{it.title}</div>
+                  <div className="text-base font-bold" style={{ color: it.color }}>{it.value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
+
+      {showAddItem && cat && (
+        <AddGuideItemModal onClose={() => setShowAddItem(false)}
+          onSubmit={(data) => { onAddItem(cat.id, data); setShowAddItem(false); }} />
+      )}
+      {editingItem && (
+        <AddGuideItemModal initial={editingItem} onClose={() => setEditingItem(null)}
+          onSubmit={(data) => { onUpdateItem(cat.id, editingItem.id, data); setEditingItem(null); }} />
+      )}
+      {showAddCat && (
+        <div className="fixed inset-0 z-40 bg-black/60 flex items-end sm:items-center justify-center" onClick={() => setShowAddCat(false)}>
+          <div className="bg-slate-950 border border-slate-800 rounded-t-2xl sm:rounded-2xl w-full max-w-sm p-5" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-4">
+              <div className="font-extrabold text-lg">قسم إرشادات جديد</div>
+              <button onClick={() => setShowAddCat(false)} className="text-slate-500 hover:text-slate-300"><X size={18} /></button>
+            </div>
+            <div className="space-y-3">
+              <div>
+                <label className="text-xs text-slate-500 mb-1 block">اسم القسم</label>
+                <input value={newCatTitle} onChange={(e) => setNewCatTitle(e.target.value)} className={inputCls} placeholder="مثال: مكافحة الحشرات" />
+              </div>
+              <div>
+                <label className="text-xs text-slate-500 mb-1 block">رمز (إيموجي)</label>
+                <input value={newCatIcon} onChange={(e) => setNewCatIcon(e.target.value)} className={inputCls} placeholder="📌" />
+              </div>
+              <button disabled={!newCatTitle.trim()}
+                onClick={() => { onAddCategory(newCatTitle.trim(), newCatIcon.trim()); setNewCatTitle(""); setNewCatIcon("📌"); setShowAddCat(false); }}
+                className="w-full bg-teal-400 disabled:opacity-40 text-slate-950 font-bold py-2.5 rounded-xl mt-2">
+                إضافة القسم
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+const GUIDE_COLOR_PRESETS = ["#2DD4BF", "#F87171", "#FBBF24", "#34D399", "#A78BFA", "#38BDF8", "#EF4444", "#F5D90A"];
+
+function AddGuideItemModal({ initial, onClose, onSubmit }) {
+  const [icon, setIcon] = useState(initial?.icon || "📌");
+  const [title, setTitle] = useState(initial?.title || "");
+  const [value, setValue] = useState(initial?.value || "");
+  const [color, setColor] = useState(initial?.color || GUIDE_COLOR_PRESETS[0]);
+  const canSubmit = title.trim().length > 0;
+
+  return (
+    <div className="fixed inset-0 z-40 bg-black/60 flex items-end sm:items-center justify-center" onClick={onClose}>
+      <div className="bg-slate-950 border border-slate-800 rounded-t-2xl sm:rounded-2xl w-full max-w-sm p-5" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between mb-4">
+          <div className="font-extrabold text-lg">{initial ? "تعديل الإرشاد" : "إضافة إرشاد"}</div>
+          <button onClick={onClose} className="text-slate-500 hover:text-slate-300"><X size={18} /></button>
+        </div>
+        <div className="space-y-3">
+          <div>
+            <label className="text-xs text-slate-500 mb-1 block">رمز (إيموجي)</label>
+            <input value={icon} onChange={(e) => setIcon(e.target.value)} className={inputCls} placeholder="🌡️" />
+          </div>
+          <div>
+            <label className="text-xs text-slate-500 mb-1 block">العنوان *</label>
+            <input value={title} onChange={(e) => setTitle(e.target.value)} className={inputCls} placeholder="مثال: التبريد (الثلاجة)" />
+          </div>
+          <div>
+            <label className="text-xs text-slate-500 mb-1 block">القيمة / التعليمة</label>
+            <input value={value} onChange={(e) => setValue(e.target.value)} className={inputCls} placeholder="مثال: 5°م أو أقل" />
+          </div>
+          <div>
+            <label className="text-xs text-slate-500 mb-1 block">اللون</label>
+            <div className="flex gap-2 flex-wrap">
+              {GUIDE_COLOR_PRESETS.map((c) => (
+                <button key={c} onClick={() => setColor(c)}
+                  className="w-8 h-8 rounded-full border-2"
+                  style={{ background: c, borderColor: color === c ? "#fff" : "transparent" }} />
+              ))}
+            </div>
+          </div>
+          <button disabled={!canSubmit}
+            onClick={() => onSubmit({ icon: icon.trim() || "📌", title: title.trim(), value: value.trim(), color })}
+            className="w-full bg-teal-400 disabled:opacity-40 text-slate-950 font-bold py-2.5 rounded-xl mt-2">
+            حفظ
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ---------------- Login (PIN) ----------------
+
+function LoginScreen({ employees, onLogin, onBack }) {
+  const [pin, setPin] = useState("");
+  const [error, setError] = useState("");
+
+  function press(d) {
+    if (pin.length >= 4) return;
+    const next = pin + d;
+    setPin(next);
+    setError("");
+    if (next.length === 4) {
+      const match = employees.find((e) => e.pin === next);
+      if (match) {
+        setTimeout(() => onLogin(match.id), 150);
+      } else {
+        setTimeout(() => {
+          setError("رقم سري غير صحيح");
+          setPin("");
+        }, 300);
+      }
+    }
+  }
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 relative">
+      {onBack && (
+        <button onClick={onBack} className="absolute top-5 right-5 text-xs text-slate-500 hover:text-teal-400 flex items-center gap-1">
+          <span>→</span> الوحدات
+        </button>
+      )}
+      <div className="w-14 h-14 rounded-full border-[3px] border-teal-400 flex items-center justify-center mb-3">
+        <CheckCircle2 size={26} className="text-teal-400" />
+      </div>
+      <div className="font-extrabold text-xl mb-1 tracking-tight">CHECKFLOW</div>
+      <div className="text-xs text-teal-400 font-bold mb-1">قسم التشغيل</div>
+      <div className="text-sm text-teal-600/80 mb-10">أدخل رقمك السري للدخول</div>
+
+      <div className="flex gap-3 mb-3">
+        {[0, 1, 2, 3].map((i) => (
+          <div
+            key={i}
+            className={`w-4 h-4 rounded-full border-2 ${
+              pin.length > i ? "bg-teal-400 border-teal-400" : "border-slate-700"
+            }`}
+          />
+        ))}
+      </div>
+      <div className="h-5 text-xs text-red-400 mb-4">{error}</div>
+
+      <div className="grid grid-cols-3 gap-4">
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
+          <button
+            key={n}
+            onClick={() => press(String(n))}
+            className="w-16 h-16 rounded-full bg-slate-900 border border-slate-800 text-xl font-bold hover:bg-slate-800 active:scale-95 transition"
+          >
+            {n}
+          </button>
+        ))}
+        <div />
+        <button
+          onClick={() => press("0")}
+          className="w-16 h-16 rounded-full bg-slate-900 border border-slate-800 text-xl font-bold hover:bg-slate-800 active:scale-95 transition"
+        >
+          0
+        </button>
+        <button
+          onClick={() => setPin(pin.slice(0, -1))}
+          className="w-16 h-16 rounded-full flex items-center justify-center text-slate-500 hover:text-slate-300"
+        >
+          <Delete size={20} />
+        </button>
+      </div>
+
+      <div className="mt-10 text-xs text-slate-600 text-center leading-6">
+        للتجربة — الرياض: مالك 1111 · مدير 9999 · مشرف 2222 · موظف 3333 / 4444<br />
+        جدة: مشرف 5555 · موظف 6666 &nbsp;·&nbsp; الدمام: مشرف 7777 · موظف 8888
+      </div>
+    </div>
+  );
+}
+
+// ---------------- Top bar ----------------
+
+function TopBar({ user, onLogout, onSave }) {
+  const [saveState, setSaveState] = useState("idle"); // idle | saving | done
+
+  async function handleSave() {
+    setSaveState("saving");
+    const ok = await onSave();
+    setSaveState(ok ? "done" : "idle");
+    if (ok) setTimeout(() => setSaveState("idle"), 1500);
+  }
+
+  return (
+    <div className="sticky top-0 z-30 border-b border-teal-900/40 bg-slate-950/90 backdrop-blur px-5 py-3 flex items-center justify-between">
+      <div className="flex items-center gap-2">
+        <div className="w-8 h-8 rounded-full border-[2.5px] border-teal-400 flex items-center justify-center">
+          <CheckCircle2 size={16} className="text-teal-400" />
+        </div>
+        <div>
+          <div className="font-extrabold text-[15px] leading-none tracking-tight">CHECKFLOW</div>
+          <div className="text-[11px] text-teal-600/80 leading-none mt-1">نظام التشغيل الرقمي</div>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-3">
+        <button onClick={handleSave} disabled={saveState === "saving"}
+          className={`text-[11px] font-bold px-3 py-1.5 rounded-full border transition-colors ${
+            saveState === "done" ? "border-teal-400 text-teal-300 bg-teal-950" : "border-slate-800 text-slate-400 hover:text-teal-300"
+          }`}>
+          {saveState === "saving" ? "جارِ الحفظ..." : saveState === "done" ? "✓ تم الحفظ" : "💾 حفظ"}
+        </button>
+        <div className="text-left">
+          <div className="text-xs font-bold leading-none">{user.name}</div>
+          <div className="text-[10px] text-slate-500 leading-none mt-1">{ROLE_LABEL[user.role]}</div>
+        </div>
+        <button onClick={onLogout} className="text-slate-500 hover:text-red-400 p-1.5">
+          <LogOut size={17} />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ---------------- Admin dashboard ----------------
+
+function AdminDashboard({
+  role, perms, permissions, tab, setTab, employees, tasks, corrective, kpis, departments, branches,
+  employeeName, departmentName, branchName,
+  onAddTask, onRemoveTask, onAddUser, onRemoveEmployee, onCloseCorrective,
+  onAddDepartment, onUpdateDepartment, onRemoveDepartment,
+  onAddBranch, onUpdateBranch, onRemoveBranch, onUpdatePermission,
+}) {
+  const [branchFilter, setBranchFilter] = useState("all");
+  const isManager = role === "manager";
+  const canSee = (tabId) => role === "admin" || !!perms?.[tabId];
+
+  const ICONS = { overview: LayoutGrid, tasks: ListChecks, departments: Layers, branches: Building2, users: Users, reports: FileBarChart };
+  let tabs = ADMIN_TABS_META.filter((t) => canSee(t.id)).map((t) => ({ ...t, icon: ICONS[t.id] }));
+  if (role === "admin") tabs = [...tabs, { id: "permissions", label: "الصلاحيات", icon: Pencil }];
+
+  // if current tab got hidden (e.g. permission revoked), fall back to the first visible tab
+  const activeTab = tabs.some((t) => t.id === tab) ? tab : (tabs[0]?.id || "overview");
+
+  const filteredDepartments = branchFilter === "all" ? departments : departments.filter((d) => d.branchId === branchFilter);
+  const filteredEmployees = branchFilter === "all" ? employees : employees.filter((e) => e.role === "admin" || e.branchId === branchFilter);
+  const branchDeptIds = new Set(filteredDepartments.map((d) => d.id));
+  const filteredTasks = branchFilter === "all" ? tasks : tasks.filter((t) => branchDeptIds.has(t.departmentId));
+
+  const showBranchFilter = ["tasks", "departments", "users"].includes(activeTab) && branches.length > 1;
+
+  return (
+    <div className="flex max-w-6xl mx-auto">
+      <aside className="w-56 shrink-0 hidden md:block border-l border-slate-900 min-h-[calc(100vh-61px)] py-6 px-3">
+        {tabs.map((t) => {
+          const Icon = t.icon;
+          const active = activeTab === t.id;
+          return (
+            <button key={t.id} onClick={() => setTab(t.id)}
+              className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm mb-1 transition-colors ${
+                active ? "bg-teal-950 text-teal-300 font-bold" : "text-slate-400 hover:bg-slate-900"
+              }`}>
+              <Icon size={17} />
+              {t.label}
+            </button>
+          );
+        })}
+      </aside>
+
+      <div className="md:hidden fixed bottom-0 inset-x-0 z-30 bg-slate-950 border-t border-slate-900 flex justify-around py-2 overflow-x-auto">
+        {tabs.map((t) => {
+          const Icon = t.icon;
+          const active = activeTab === t.id;
+          return (
+            <button key={t.id} onClick={() => setTab(t.id)} className="flex flex-col items-center gap-1 px-2">
+              <Icon size={18} className={active ? "text-teal-400" : "text-slate-500"} />
+              <span className={`text-[10px] ${active ? "text-teal-400" : "text-slate-500"}`}>{t.label}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <main className="flex-1 px-5 py-6 pb-24 md:pb-6">
+        {showBranchFilter && (
+          <div className="flex flex-wrap gap-2 mb-5">
+            <button onClick={() => setBranchFilter("all")}
+              className={`text-xs px-3 py-1.5 rounded-full border ${branchFilter === "all" ? "bg-teal-400 text-slate-950 font-bold border-teal-400" : "border-slate-800 text-slate-400"}`}>
+              كل الفروع
+            </button>
+            {branches.map((b) => (
+              <button key={b.id} onClick={() => setBranchFilter(b.id)}
+                className={`text-xs px-3 py-1.5 rounded-full border ${branchFilter === b.id ? "bg-teal-400 text-slate-950 font-bold border-teal-400" : "border-slate-800 text-slate-400"}`}>
+                {b.name}
+              </button>
+            ))}
+          </div>
+        )}
+        {activeTab === "overview" && <OverviewTab kpis={kpis} tasks={tasks} corrective={corrective} />}
+        {activeTab === "tasks" && <TasksTab tasks={filteredTasks} employeeName={employeeName} departmentName={departmentName} onAddTask={onAddTask} onRemoveTask={onRemoveTask} />}
+        {activeTab === "departments" && (
+          <DepartmentsTab departments={filteredDepartments} branches={branches} branchFilter={branchFilter} tasks={tasks}
+            onAdd={onAddDepartment} onUpdate={onUpdateDepartment} onRemove={onRemoveDepartment} />
+        )}
+        {activeTab === "branches" && (
+          <BranchesTab branches={branches} departments={departments} tasks={tasks} corrective={corrective}
+            readOnly={isManager} onAdd={onAddBranch} onUpdate={onUpdateBranch} onRemove={onRemoveBranch} />
+        )}
+        {activeTab === "users" && (
+          <UsersTab employees={filteredEmployees} tasks={tasks} branchName={branchName} readOnly={isManager} onAddUser={onAddUser} onRemove={onRemoveEmployee} />
+        )}
+        {activeTab === "reports" && (
+          <ReportsTab kpis={kpis} tasks={tasks} employees={employees} corrective={corrective}
+            employeeName={employeeName} departmentName={departmentName} onCloseCorrective={onCloseCorrective} />
+        )}
+        {activeTab === "permissions" && role === "admin" && (
+          <PermissionsTab employees={employees} permissions={permissions} onUpdate={onUpdatePermission} />
+        )}
+      </main>
+    </div>
+  );
+}
+
+function PermissionsTab({ employees, permissions, onUpdate }) {
+  const people = employees.filter((e) => e.role !== "admin");
+  const [selectedId, setSelectedId] = useState(people[0]?.id || "");
+  const selected = people.find((p) => p.id === selectedId);
+  const perms = selected ? getUserPerms(permissions, selected.id, selected.role) : {};
+
+  return (
+    <div>
+      <h1 className="text-xl font-extrabold mb-1">الصلاحيات</h1>
+      <p className="text-sm text-slate-400 mb-6">
+        وزّع الوصول لأي قسم على أي شخص حسب رؤيتك للعمل — كل شخص لحاله، بغض النظر عن دوره. المالك دائماً يشوف كل شي.
+      </p>
+
+      <div className="flex flex-wrap gap-2 mb-6">
+        {people.map((p) => (
+          <button key={p.id} onClick={() => setSelectedId(p.id)}
+            className={`text-xs px-3.5 py-2 rounded-full border ${selectedId === p.id ? "bg-teal-400 text-slate-950 font-bold border-teal-400" : "border-slate-800 text-slate-400"}`}>
+            {p.name} <span className="opacity-70">· {ROLE_LABEL[p.role]}</span>
+          </button>
+        ))}
+      </div>
+
+      {selected && (
+        <>
+          <div className="rounded-2xl border border-slate-900 bg-slate-900/40 overflow-hidden">
+            {ADMIN_TABS_META.map((t, i) => {
+              const checked = !!perms[t.id];
+              return (
+                <div key={t.id} className={`flex items-center justify-between px-5 py-4 ${i !== 0 ? "border-t border-slate-900" : ""}`}>
+                  <div>
+                    <span className="text-sm font-bold">{t.label}</span>
+                    {(t.id === "branches" || t.id === "users") && (
+                      <span className="text-[10px] text-slate-500 block mt-0.5">عرض فقط دائماً — بدون إضافة أو تعديل أو حذف</span>
+                    )}
+                  </div>
+                  <button
+                    onClick={() => onUpdate(selected.id, selected.role, t.id, !checked)}
+                    className={`rounded-full relative transition-colors ${checked ? "bg-teal-400" : "bg-slate-700"}`}
+                    style={{ width: "3rem", height: "1.6rem" }}>
+                    <span className="absolute top-0.5 w-5 h-5 rounded-full bg-white transition-all"
+                      style={{ right: checked ? "1.55rem" : "0.15rem" }} />
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+          <p className="text-xs text-slate-500 mt-4">
+            {selected.role === "manager"
+              ? "المدير يدير المهام والأقسام بشكل طبيعي إذا فعّلتها له — الفروع والمستخدمون عرض فقط دائماً."
+              : "أي قسم تفعّله هون بيظهر لهذا الشخص كعرض إضافي جنب لوحته الأساسية، بدون صلاحية إدارة."}
+          </p>
+        </>
+      )}
+    </div>
+  );
+}
+
+// ---------------- Extra access shell (per-user granted sections for non-manager roles) ----------------
+
+function ExtraAccessShell({ user, permissions, children, tasks, employees, corrective, kpis, departments, branches, employeeName, departmentName, branchName, onCloseCorrective }) {
+  const perms = getUserPerms(permissions, user.id, user.role);
+  const grantedTabs = ADMIN_TABS_META.filter((t) => perms[t.id]);
+  const [view, setView] = useState("base");
+
+  if (grantedTabs.length === 0) return children;
+
+  const pill = (active) =>
+    `text-xs px-3.5 py-1.5 rounded-full border ${active ? "bg-teal-400 text-slate-950 font-bold border-teal-400" : "border-slate-800 text-slate-400"}`;
+
+  return (
+    <div>
+      <div className="max-w-3xl mx-auto px-5 pt-5 flex flex-wrap gap-2">
+        <button onClick={() => setView("base")} className={pill(view === "base")}>لوحتي</button>
+        {grantedTabs.map((t) => (
+          <button key={t.id} onClick={() => setView(t.id)} className={pill(view === t.id)}>{t.label}</button>
+        ))}
+      </div>
+
+      {view === "base" ? children : (
+        <div className="max-w-6xl mx-auto px-5 py-6">
+          {view === "overview" && <OverviewTab kpis={kpis} tasks={tasks} corrective={corrective} />}
+          {view === "tasks" && <TasksTab tasks={tasks} employeeName={employeeName} departmentName={departmentName} />}
+          {view === "departments" && (
+            <DepartmentsTab departments={departments} branches={branches} branchFilter="all" tasks={tasks} readOnly
+              onAdd={() => {}} onUpdate={() => {}} onRemove={() => {}} />
+          )}
+          {view === "branches" && (
+            <BranchesTab branches={branches} departments={departments} tasks={tasks} corrective={corrective} readOnly
+              onAdd={() => {}} onUpdate={() => {}} onRemove={() => {}} />
+          )}
+          {view === "users" && (
+            <UsersTab employees={employees} tasks={tasks} branchName={branchName} readOnly onAddUser={() => {}} onRemove={() => {}} />
+          )}
+          {view === "reports" && (
+            <ReportsTab kpis={kpis} tasks={tasks} employees={employees} corrective={corrective}
+              employeeName={employeeName} departmentName={departmentName} onCloseCorrective={onCloseCorrective} />
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ---------------- Supervisor dashboard ----------------
+
+function SupervisorDashboard({ user, employees, tasks, corrective, employeeName, departmentName, onCloseCorrective, onVerifyTask, onOpenTask }) {
+  const teamIds = employees.filter((e) => e.supervisorId === user.id).map((e) => e.id);
+  const teamTasks = tasks.filter((t) => teamIds.includes(t.assignedTo));
+  const teamCorrective = corrective.filter((c) => teamIds.includes(tasks.find((t) => t.id === c.taskId)?.assignedTo));
+  const needsReview = teamTasks.filter((t) => (t.status === "done" || t.status === "non_compliant") && !t.verified);
+
+  const myTasks = tasks.filter((t) => t.assignedTo === user.id);
+  const myPending = myTasks.filter((t) => t.status !== "done" && t.status !== "non_compliant");
+  const myDone = myTasks.filter((t) => t.status === "done" || t.status === "non_compliant");
+
+  return (
+    <div className="max-w-2xl mx-auto px-5 py-6">
+      <h1 className="text-xl font-extrabold mb-1">مهام فريقي</h1>
+      <p className="text-sm text-slate-400 mb-6">
+        {employees.filter((e) => teamIds.includes(e.id)).map((e) => e.name).join(" · ") || "لا يوجد موظفون مرتبطون بك حالياً"}
+      </p>
+
+      {myTasks.length > 0 && (
+        <div className="rounded-2xl border border-teal-900 bg-teal-950/30 p-5 mb-6">
+          <div className="text-sm font-bold mb-3 flex items-center gap-2 text-teal-300">
+            <ClipboardList size={15} /> مهامي الشخصية ({myPending.length} معلّقة)
+          </div>
+          <div className="space-y-2">
+            {myTasks.map((t) => {
+              const meta = STATUS_META[t.status];
+              const clickable = t.status !== "done" && t.status !== "non_compliant";
+              return (
+                <button key={t.id} disabled={!clickable} onClick={() => clickable && onOpenTask(t)}
+                  className="w-full text-right rounded-xl border border-slate-800 bg-slate-900/60 p-3.5 flex items-center justify-between">
+                  <div>
+                    <div className="font-bold text-sm mb-1">{t.title}</div>
+                    <div className="text-xs text-slate-500">{departmentName(t.departmentId)} · {t.time}</div>
+                  </div>
+                  <span className="text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0" style={{ color: meta.color, background: meta.bg }}>
+                    {meta.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {needsReview.length > 0 && (
+        <div className="rounded-2xl border border-amber-900/50 bg-amber-950/20 p-5 mb-6">
+          <div className="text-sm font-bold mb-3 flex items-center gap-2 text-amber-300">
+            <Bell size={15} /> بانتظار مراجعتك ({needsReview.length})
+          </div>
+          <div className="space-y-2.5">
+            {needsReview.map((t) => {
+              const meta = STATUS_META[t.status];
+              return (
+                <div key={t.id} className="rounded-xl border border-slate-800 bg-slate-900/60 p-3.5">
+                  <div className="flex items-center justify-between mb-1">
+                    <div className="font-bold text-sm">{t.title}</div>
+                    <span className="text-[11px] font-bold px-2.5 py-1 rounded-full" style={{ color: meta.color, background: meta.bg }}>
+                      {meta.label}
+                    </span>
+                  </div>
+                  <div className="text-xs text-slate-500 mb-2">
+                    {employeeName(t.assignedTo)} · النتيجة: {t.result || "—"} {t.completedAt && <>· الساعة {t.completedAt}</>}
+                  </div>
+                  {t.photo && <img src={t.photo} alt="دليل التنفيذ" className="w-full h-32 object-cover rounded-lg mb-2 border border-slate-800" />}
+                  <button onClick={() => onVerifyTask(t.id)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-teal-400 text-slate-950">
+                    اعتماد التنفيذ
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      <div className="rounded-2xl border border-slate-900 bg-slate-900/40 p-5 mb-6">
+        <div className="text-sm font-bold mb-4">كل مهام الفريق</div>
+        <div className="space-y-2.5">
+          {teamTasks.length === 0 && <div className="text-sm text-slate-500">لا توجد مهام لفريقك</div>}
+          {teamTasks.map((t) => {
+            const meta = STATUS_META[t.status];
+            return (
+              <div key={t.id} className="rounded-xl border border-slate-800 p-3.5 flex items-center justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="font-bold text-sm">{t.title}</div>
+                    <ShiftBadge shift={t.shift} />
+                    {t.verified && <span className="text-[10px] font-bold text-teal-400">معتمدة ✓</span>}
+                  </div>
+                  <div className="text-xs text-slate-500">{departmentName(t.departmentId)} · {t.time} · {employeeName(t.assignedTo)}</div>
+                </div>
+                <span className="text-xs font-bold px-3 py-1 rounded-full shrink-0" style={{ color: meta.color, background: meta.bg }}>
+                  {meta.label}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {teamCorrective.length > 0 && (
+        <div className="rounded-2xl border border-slate-900 bg-slate-900/40 p-5">
+          <div className="text-sm font-bold mb-4">إجراءات تصحيحية لفريقي</div>
+          <div className="space-y-2.5">
+            {teamCorrective.map((c) => (
+              <div key={c.id} className="rounded-xl border border-slate-800 p-3.5 flex items-center justify-between">
+                <div>
+                  <div className="text-sm font-bold">{c.title}</div>
+                  <div className="text-xs text-slate-500 mt-1">المسؤول: {c.responsible} · الموعد: {c.due}</div>
+                  {c.note && <div className="text-xs text-slate-400 mt-1">ملاحظة: {c.note}</div>}
+                </div>
+                {c.status === "closed" ? (
+                  <span className="text-xs font-bold px-3 py-1 rounded-full text-emerald-300 bg-emerald-950">مغلقة</span>
+                ) : (
+                  <button onClick={() => onCloseCorrective(c.id)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-teal-400 text-slate-950">
+                    اعتماد الإغلاق
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function StatCard({ label, value, suffix, color }) {
+  return (
+    <div className="rounded-2xl border border-slate-900 bg-slate-900/40 p-4">
+      <div className="text-[13px] text-slate-400 mb-2">{label}</div>
+      <div className="text-2xl font-extrabold" style={{ color: color || "#F1F5F4" }}>{value}{suffix}</div>
+    </div>
+  );
+}
+
+function OverviewTab({ kpis, tasks, corrective }) {
+  const byStatus = ["done", "in_progress", "late", "not_started"].map((s) => ({
+    status: s,
+    count: tasks.filter((t) => t.status === s || (s === "done" && t.status === "non_compliant")).length,
+  }));
+  const openNotes = corrective.filter((c) => c.status !== "closed");
+
+  return (
+    <div>
+      <h1 className="text-xl font-extrabold mb-1">أهلاً بك</h1>
+      <p className="text-sm text-slate-400 mb-5">هذا أداء التشغيل الحالي بالمنشأة</p>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+        <StatCard label="نسبة إنجاز المهام" value={kpis.completion} suffix="%" color="#2DD4BF" />
+        <StatCard label="مؤشر الجودة" value={kpis.quality} suffix="%" color="#34D399" />
+        <StatCard label="مهام متأخرة" value={kpis.late} color="#FBBF24" />
+        <StatCard label="ملاحظات مفتوحة" value={kpis.openNotes} color="#F87171" />
+      </div>
+
+      <div className="rounded-2xl border border-slate-900 bg-slate-900/40 p-5 mb-6">
+        <div className="text-sm font-bold mb-4">توزيع المهام اليوم</div>
+        <div className="space-y-3">
+          {byStatus.map((row) => {
+            const meta = STATUS_META[row.status];
+            const total = tasks.length || 1;
+            const pct = Math.round((row.count / total) * 100);
+            return (
+              <div key={row.status}>
+                <div className="flex justify-between text-xs mb-1">
+                  <span className="text-slate-300">{meta.label}</span>
+                  <span className="text-slate-500">{row.count}</span>
+                </div>
+                <div className="h-2 rounded-full bg-slate-800 overflow-hidden">
+                  <div className="h-full rounded-full" style={{ width: `${pct}%`, background: meta.color }} />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="rounded-2xl border border-slate-900 bg-slate-900/40 p-5">
+        <div className="text-sm font-bold mb-3 flex items-center gap-2">
+          <Bell size={15} className="text-amber-400" /> تنبيهات
+        </div>
+        {openNotes.length === 0 ? (
+          <div className="text-sm text-slate-500">لا توجد تنبيهات حالياً — كل المهام ضمن السيطرة</div>
+        ) : (
+          <div className="space-y-2">
+            {openNotes.map((n) => (
+              <div key={n.id} className="text-sm flex items-start gap-2 text-slate-300">
+                <AlertTriangle size={14} className="text-red-400 mt-0.5 shrink-0" />
+                <span><b className="text-red-300">{n.title}</b> — إجراء تصحيحي مطلوب، المسؤول: {n.responsible}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+const SHIFT_COLOR = { "صباحية": "#FBBF24", "مسائية": "#818CF8" };
+
+function ShiftBadge({ shift }) {
+  if (!shift) return null;
+  return (
+    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ color: SHIFT_COLOR[shift], background: `${SHIFT_COLOR[shift]}20` }}>
+      {shift}
+    </span>
+  );
+}
+
+function TasksTab({ tasks, employeeName, departmentName, onAddTask, onRemoveTask }) {
+  const [day, setDay] = useState("الكل");
+  const [shift, setShift] = useState("الكل");
+
+  const filtered = tasks.filter(
+    (t) => (day === "الكل" || t.day === day) && (shift === "الكل" || t.shift === shift)
+  );
+
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-4">
+        <h1 className="text-xl font-extrabold">جدولة المهام</h1>
+        {onAddTask && (
+          <button onClick={onAddTask}
+            className="flex items-center gap-1.5 bg-teal-400 text-slate-950 text-sm font-bold px-4 py-2 rounded-xl hover:bg-teal-300">
+            <Plus size={16} /> إضافة مهمة
+          </button>
+        )}
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-2">
+        {["الكل", ...DAYS].map((d) => (
+          <button key={d} onClick={() => setDay(d)}
+            className={`text-xs px-3 py-1.5 rounded-full border ${day === d ? "bg-teal-400 text-slate-950 font-bold border-teal-400" : "border-slate-800 text-slate-400"}`}>
+            {d}
+          </button>
+        ))}
+      </div>
+      <div className="flex flex-wrap gap-2 mb-5">
+        {["الكل", ...SHIFTS].map((s) => (
+          <button key={s} onClick={() => setShift(s)}
+            className={`text-xs px-3 py-1.5 rounded-full border ${shift === s ? "border-transparent font-bold" : "border-slate-800 text-slate-400"}`}
+            style={shift === s ? { background: s === "الكل" ? "#2DD4BF" : `${SHIFT_COLOR[s]}25`, color: s === "الكل" ? "#022c22" : SHIFT_COLOR[s] } : {}}>
+            {s}
+          </button>
+        ))}
+      </div>
+
+      <div className="space-y-2.5">
+        {filtered.length === 0 && <div className="text-sm text-slate-500">لا توجد مهام مطابقة لهذا الفلتر</div>}
+        {filtered.map((t) => {
+          const meta = STATUS_META[t.status];
+          const recurring = t.day === "دائمة";
+          return (
+            <div key={t.id} className="rounded-xl border border-slate-900 bg-slate-900/40 p-4 flex items-center justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="font-bold text-sm">{t.title}</div>
+                  <ShiftBadge shift={t.shift} />
+                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${recurring ? "text-teal-300 bg-teal-950" : "text-slate-500"}`}>
+                    {t.day}
+                  </span>
+                </div>
+                <div className="text-xs text-slate-500">
+                  {departmentName(t.departmentId)} · {t.time} · مسندة إلى {employeeName(t.assignedTo)}
+                  {t.completedAt && <> · أُنجزت الساعة {t.completedAt}</>}
+                </div>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ color: meta.color, background: meta.bg }}>
+                  {meta.label}
+                </span>
+                {onRemoveTask && (
+                  <button onClick={() => onRemoveTask(t.id)} className="text-slate-600 hover:text-red-400 p-1" title="حذف المهمة">
+                    <Trash2 size={15} />
+                  </button>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function UsersTab({ employees, tasks, branchName, readOnly, onAddUser, onRemove }) {
+  const supervisorName = (id) => employees.find((e) => e.id === id)?.name;
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-5">
+        <h1 className="text-xl font-extrabold">المستخدمون</h1>
+        {!readOnly && (
+          <button onClick={onAddUser}
+            className="flex items-center gap-1.5 bg-teal-400 text-slate-950 text-sm font-bold px-4 py-2 rounded-xl hover:bg-teal-300">
+            <Plus size={16} /> إنشاء مستخدم
+          </button>
+        )}
+      </div>
+      {readOnly && <p className="text-xs text-amber-400 mb-4">وضع العرض فقط — إدارة المستخدمين متاحة للمالك فقط</p>}
+
+      <div className="space-y-2.5">
+        {employees.map((e) => {
+          const assignedCount = tasks.filter((t) => t.assignedTo === e.id).length;
+          return (
+            <div key={e.id} className="rounded-xl border border-slate-900 bg-slate-900/40 p-4 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-teal-950 flex items-center justify-center text-teal-300 font-bold text-sm">
+                  {e.name[0]}
+                </div>
+                <div>
+                  <div className="font-bold text-sm">{e.name}</div>
+                  <div className="text-xs text-slate-500">
+                    {e.title} ({ROLE_LABEL[e.role]}) · رقم سري: {e.pin} · {assignedCount} مهمة مسندة
+                    {e.branchId && <> · فرع {branchName(e.branchId)}</>}
+                    {e.shift && <> · الوردية {e.shift}</>}
+                    {e.supervisorId && <> · يتبع لـ {supervisorName(e.supervisorId)}</>}
+                  </div>
+                </div>
+              </div>
+              {!readOnly && e.role !== "admin" && (
+                <button onClick={() => onRemove(e.id)} className="text-slate-600 hover:text-red-400 p-1">
+                  <Trash2 size={16} />
+                </button>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function DepartmentsTab({ departments, branches, branchFilter, tasks, readOnly, onAdd, onUpdate, onRemove }) {
+  const [newName, setNewName] = useState("");
+  const [newBranchId, setNewBranchId] = useState(branchFilter !== "all" ? branchFilter : branches[0]?.id || "");
+  const [editingId, setEditingId] = useState(null);
+  const [editValue, setEditValue] = useState("");
+  const branchName = (id) => branches.find((b) => b.id === id)?.name || "—";
+
+  function startEdit(d) {
+    setEditingId(d.id);
+    setEditValue(d.name);
+  }
+  function saveEdit() {
+    if (editValue.trim()) onUpdate(editingId, editValue.trim());
+    setEditingId(null);
+  }
+
+  return (
+    <div>
+      <h1 className="text-xl font-extrabold mb-1">الأقسام</h1>
+      <p className="text-sm text-slate-400 mb-5">
+        {readOnly ? "عرض الأقسام (وضع العرض فقط)" : "أضف أقسام حسب طبيعة كل فرع (مطبخ، صالة، مخبز، مخزن...) واستخدمها عند إضافة المهام"}
+      </p>
+
+      {!readOnly && (
+        <div className="flex gap-2 mb-5">
+          <input className={inputCls} value={newName} onChange={(e) => setNewName(e.target.value)} placeholder="اسم قسم جديد، مثال: المخبز" />
+          {branches.length > 1 && (
+            <select className={inputCls + " max-w-[140px]"} value={newBranchId} onChange={(e) => setNewBranchId(e.target.value)}>
+              {branches.map((b) => (<option key={b.id} value={b.id}>{b.name}</option>))}
+            </select>
+          )}
+          <button
+            disabled={!newName.trim() || !newBranchId}
+            onClick={() => { onAdd(newName.trim(), newBranchId); setNewName(""); }}
+            className="shrink-0 flex items-center gap-1.5 bg-teal-400 disabled:opacity-40 text-slate-950 text-sm font-bold px-4 rounded-xl">
+            <Plus size={16} /> إضافة
+          </button>
+        </div>
+      )}
+
+      <div className="space-y-2.5">
+        {departments.length === 0 && <div className="text-sm text-slate-500">لا توجد أقسام لهذا الفلتر بعد</div>}
+        {departments.map((d) => {
+          const count = tasks.filter((t) => t.departmentId === d.id).length;
+          return (
+            <div key={d.id} className="rounded-xl border border-slate-900 bg-slate-900/40 p-4 flex items-center justify-between">
+              {editingId === d.id ? (
+                <input
+                  className={inputCls + " ml-2"}
+                  value={editValue}
+                  autoFocus
+                  onChange={(e) => setEditValue(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && saveEdit()}
+                />
+              ) : (
+                <div>
+                  <div className="font-bold text-sm">{d.name}</div>
+                  <div className="text-xs text-slate-500">
+                    {branches.length > 1 && <>{branchName(d.branchId)} · </>}{count} مهمة مرتبطة
+                  </div>
+                </div>
+              )}
+              {!readOnly && (
+                <div className="flex items-center gap-1 shrink-0">
+                  {editingId === d.id ? (
+                    <button onClick={saveEdit} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-teal-400 text-slate-950 mr-2">حفظ</button>
+                  ) : (
+                    <button onClick={() => startEdit(d)} className="text-slate-500 hover:text-teal-300 p-1.5">
+                      <Pencil size={15} />
+                    </button>
+                  )}
+                  <button
+                    onClick={() => count === 0 && onRemove(d.id)}
+                    disabled={count > 0}
+                    title={count > 0 ? "يوجد مهام مرتبطة بهذا القسم" : "حذف"}
+                    className="text-slate-600 hover:text-red-400 disabled:opacity-30 disabled:hover:text-slate-600 p-1.5">
+                    <Trash2 size={15} />
+                  </button>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function branchStatusMeta(completion) {
+  if (completion >= 90) return { label: "ممتاز", color: "#34D399" };
+  if (completion >= 80) return { label: "جيد", color: "#2DD4BF" };
+  if (completion >= 70) return { label: "بحاجة متابعة", color: "#FBBF24" };
+  return { label: "أولوية", color: "#F87171" };
+}
+
+function BranchesTab({ branches, departments, tasks, corrective, readOnly, onAdd, onUpdate, onRemove }) {
+  const [newName, setNewName] = useState("");
+  const [editingId, setEditingId] = useState(null);
+  const [editValue, setEditValue] = useState("");
+
+  function startEdit(b) {
+    setEditingId(b.id);
+    setEditValue(b.name);
+  }
+  function saveEdit() {
+    if (editValue.trim()) onUpdate(editingId, editValue.trim());
+    setEditingId(null);
+  }
+
+  const rows = branches.map((b) => {
+    const deptIds = new Set(departments.filter((d) => d.branchId === b.id).map((d) => d.id));
+    const bTasks = tasks.filter((t) => deptIds.has(t.departmentId));
+    const total = bTasks.length || 1;
+    const done = bTasks.filter((t) => t.status === "done").length;
+    const nonCompliant = bTasks.filter((t) => t.status === "non_compliant").length;
+    const completion = Math.round((done / total) * 100);
+    const quality = Math.max(0, Math.min(100, completion - nonCompliant * 8));
+    const openNotes = corrective.filter((c) => c.status !== "closed" && bTasks.some((t) => t.id === c.taskId)).length;
+    const deptCount = deptIds.size;
+    return { ...b, completion, quality, openNotes, deptCount, hasTasks: bTasks.length > 0, ...branchStatusMeta(completion) };
+  });
+
+  return (
+    <div>
+      <h1 className="text-xl font-extrabold mb-1">الفروع</h1>
+      <p className="text-sm text-slate-400 mb-5">
+        {readOnly ? "مقارنة أداء الفروع (وضع العرض فقط)" : "قارن أداء الفروع، وأضف فروعاً جديدة كلما توسّعت المنشأة"}
+      </p>
+
+      {!readOnly && (
+        <div className="flex gap-2 mb-6">
+          <input className={inputCls} value={newName} onChange={(e) => setNewName(e.target.value)} placeholder="اسم فرع جديد، مثال: الخبر" />
+          <button
+            disabled={!newName.trim()}
+            onClick={() => { onAdd(newName.trim()); setNewName(""); }}
+            className="shrink-0 flex items-center gap-1.5 bg-teal-400 disabled:opacity-40 text-slate-950 text-sm font-bold px-4 rounded-xl">
+            <Plus size={16} /> إضافة فرع
+          </button>
+        </div>
+      )}
+
+      <div className="rounded-2xl border border-slate-900 bg-slate-900/40 overflow-hidden mb-6">
+        <div className="grid grid-cols-5 gap-2 px-4 py-3 text-[11px] text-slate-500 border-b border-slate-900">
+          <span>الفرع</span><span>الالتزام</span><span>الجودة</span><span>الملاحظات</span><span>الحالة</span>
+        </div>
+        {rows.map((r) => (
+          <div key={r.id} className="grid grid-cols-5 gap-2 px-4 py-3 items-center text-sm border-b border-slate-900/60 last:border-0">
+            {editingId === r.id ? (
+              <input className={inputCls} value={editValue} autoFocus
+                onChange={(e) => setEditValue(e.target.value)} onKeyDown={(e) => e.key === "Enter" && saveEdit()} />
+            ) : (
+              <span className="font-bold flex items-center gap-1.5">
+                {r.name}
+                {!readOnly && (
+                  <button onClick={() => startEdit(r)} className="text-slate-600 hover:text-teal-300"><Pencil size={12} /></button>
+                )}
+              </span>
+            )}
+            <span className="text-slate-300">{r.hasTasks ? `${r.completion}%` : "—"}</span>
+            <span className="text-slate-300">{r.hasTasks ? `${r.quality}%` : "—"}</span>
+            <span className="text-slate-300">{r.openNotes}</span>
+            {r.hasTasks ? (
+              <span className="text-xs font-bold px-2.5 py-1 rounded-full w-fit" style={{ color: r.color, background: `${r.color}20` }}>{r.label}</span>
+            ) : (
+              <span className="text-xs text-slate-600">لا توجد بيانات</span>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {!readOnly && (
+        <div className="space-y-2">
+          {rows.map((r) => (
+            <div key={r.id} className="flex items-center justify-between text-xs text-slate-500 px-1">
+              <span>{r.name} · {r.deptCount} قسم</span>
+              {r.deptCount === 0 && (
+                <button onClick={() => onRemove(r.id)} className="text-slate-600 hover:text-red-400 flex items-center gap-1">
+                  <Trash2 size={12} /> حذف الفرع
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function TrendChart({ points }) {
+  const w = 320, h = 90, pad = 10;
+  const n = points.length;
+  const xAt = (i) => pad + (i * (w - pad * 2)) / (n - 1);
+  const yAt = (v) => h - pad - (v / 100) * (h - pad * 2);
+
+  const linePath = (key, color) => {
+    const d = points.map((p, i) => `${i === 0 ? "M" : "L"} ${xAt(i)} ${yAt(p[key])}`).join(" ");
+    return <path d={d} fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />;
+  };
+
+  return (
+    <div>
+      <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-auto">
+        {[25, 50, 75].map((v) => (
+          <line key={v} x1={pad} x2={w - pad} y1={yAt(v)} y2={yAt(v)} stroke="#1e293b" strokeWidth="1" />
+        ))}
+        {linePath("completion", "#2DD4BF")}
+        {linePath("quality", "#34D399")}
+        {points.map((p, i) => (
+          <g key={i}>
+            <circle cx={xAt(i)} cy={yAt(p.completion)} r="3" fill="#2DD4BF" />
+            <circle cx={xAt(i)} cy={yAt(p.quality)} r="3" fill="#34D399" />
+          </g>
+        ))}
+      </svg>
+      <div className="flex items-center justify-between mt-1">
+        {points.map((p, i) => (
+          <span key={i} className="text-[10px] text-slate-500">{p.label}</span>
+        ))}
+      </div>
+      <div className="flex items-center gap-4 mt-2">
+        <span className="flex items-center gap-1.5 text-[11px] text-slate-400"><span className="w-2 h-2 rounded-full bg-teal-400" /> نسبة الإنجاز</span>
+        <span className="flex items-center gap-1.5 text-[11px] text-slate-400"><span className="w-2 h-2 rounded-full bg-emerald-400" /> الجودة</span>
+      </div>
+    </div>
+  );
+}
+
+function BreakdownList({ title, rows, onSelect }) {
+  return (
+    <div className="rounded-2xl border border-slate-900 bg-slate-900/40 p-5 mb-6">
+      <div className="text-sm font-bold mb-4">{title}</div>
+      <div className="space-y-3">
+        {rows.map((r) => (
+          <button key={r.id} onClick={() => onSelect(r)} className="w-full text-right block">
+            <div className="flex justify-between text-xs mb-1">
+              <span className="text-slate-300 flex items-center gap-2">
+                {r.name}
+                {r.note && (
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ color: r.noteColor, background: `${r.noteColor}20` }}>
+                    {r.note}
+                  </span>
+                )}
+              </span>
+              <span className="text-slate-500">{r.done}/{r.total}</span>
+            </div>
+            <div className="h-2 rounded-full bg-slate-800 overflow-hidden">
+              <div className="h-full rounded-full bg-teal-400" style={{ width: `${r.pct}%` }} />
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TaskListModal({ title, tasks, departmentName, employeeName, onClose, onSelectTask }) {
+  return (
+    <ModalShell title={title} onClose={onClose}>
+      {tasks.length === 0 ? (
+        <div className="text-sm text-slate-500">لا توجد مهام</div>
+      ) : (
+        <div className="space-y-2">
+          {tasks.map((t) => {
+            const meta = STATUS_META[t.status];
+            return (
+              <button key={t.id} onClick={() => onSelectTask(t)}
+                className="w-full text-right rounded-xl border border-slate-800 bg-slate-900/60 p-3.5 flex items-center justify-between">
+                <div>
+                  <div className="font-bold text-sm mb-1">{t.title}</div>
+                  <div className="text-xs text-slate-500">{departmentName(t.departmentId)} · {t.time} · {employeeName(t.assignedTo)}</div>
+                </div>
+                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0" style={{ color: meta.color, background: meta.bg }}>
+                  {meta.label}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </ModalShell>
+  );
+}
+
+function TaskDetailModal({ task, departmentName, employeeName, onClose }) {
+  const meta = STATUS_META[task.status];
+  return (
+    <ModalShell title={task.title} onClose={onClose}>
+      <div className="text-xs text-slate-500 mb-4">
+        {departmentName(task.departmentId)} · {task.day} · {task.time}
+        {task.shift && <> · <ShiftBadge shift={task.shift} /></>}
+      </div>
+
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-xs text-slate-400">الحالة</span>
+        <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ color: meta.color, background: meta.bg }}>{meta.label}</span>
+      </div>
+
+      <div className="rounded-xl bg-slate-900 border border-slate-800 p-3 mb-3 text-sm text-slate-300">
+        <div className="text-xs text-slate-500 mb-1">المعيار</div>
+        {task.standardLabel}
+      </div>
+
+      <div className="grid grid-cols-2 gap-3 mb-3">
+        <div className="rounded-xl bg-slate-900 border border-slate-800 p-3">
+          <div className="text-xs text-slate-500 mb-1">الموظف المسؤول</div>
+          <div className="text-sm font-bold">{employeeName(task.assignedTo)}</div>
+        </div>
+        <div className="rounded-xl bg-slate-900 border border-slate-800 p-3">
+          <div className="text-xs text-slate-500 mb-1">النتيجة</div>
+          <div className="text-sm font-bold">{task.result || "—"}</div>
+        </div>
+      </div>
+
+      {task.completedAt && (
+        <div className="text-xs text-slate-500 mb-3">أُنجزت الساعة {task.completedAt}
+          {task.verified ? <span className="text-teal-400 font-bold"> · معتمدة من المشرف ✓</span> : <span className="text-amber-400 font-bold"> · بانتظار اعتماد المشرف</span>}
+        </div>
+      )}
+
+      {task.note && (
+        <div className="rounded-xl bg-red-950/20 border border-red-900/40 p-3 mb-3 text-sm text-red-200">
+          <div className="text-xs text-red-400 mb-1">ملاحظة</div>
+          {task.note}
+        </div>
+      )}
+
+      {task.photo && <img src={task.photo} alt="دليل التنفيذ" className="w-full h-40 object-cover rounded-xl border border-slate-800" />}
+    </ModalShell>
+  );
+}
+
+function ReportsTab({ kpis, tasks, employees, corrective, employeeName, departmentName, onCloseCorrective }) {
+  const [drill, setDrill] = useState(null); // { title, list }
+  const [viewTask, setViewTask] = useState(null);
+
+  const attention = tasks.filter((t) => t.status === "non_compliant" || t.status === "late");
+  const trendPoints = [...HISTORY_SEED, { label: "اليوم", completion: kpis.completion, quality: kpis.quality }];
+
+  function rowNote(rowTasks) {
+    const late = rowTasks.filter((t) => t.status === "late").length;
+    const nonCompliant = rowTasks.filter((t) => t.status === "non_compliant").length;
+    const incomplete = rowTasks.filter((t) => t.status === "not_started" || t.status === "in_progress").length;
+    if (late > 0) return { note: "متأخر", noteColor: "#FBBF24" };
+    if (nonCompliant > 0) return { note: "غير مطابق", noteColor: "#F87171" };
+    if (incomplete > 0) return { note: "غير مكتمل", noteColor: "#7C9A95" };
+    return { note: null, noteColor: null };
+  }
+
+  const employeeRows = employees
+    .filter((e) => e.role !== "admin")
+    .map((e) => {
+      const eTasks = tasks.filter((t) => t.assignedTo === e.id);
+      const done = eTasks.filter((t) => t.status === "done").length;
+      const total = eTasks.length || 1;
+      return { id: e.id, kind: "employee", name: e.name, done, total: eTasks.length,
+        pct: Math.round((done / total) * 100), tasks: eTasks, ...rowNote(eTasks) };
+    })
+    .filter((r) => r.total > 0);
+
+  const departmentRows = employees.length
+    ? [...new Set(tasks.map((t) => t.departmentId))].map((depId) => {
+        const dTasks = tasks.filter((t) => t.departmentId === depId);
+        const done = dTasks.filter((t) => t.status === "done").length;
+        const total = dTasks.length || 1;
+        return { id: depId, kind: "department", name: departmentName(depId), done, total: dTasks.length,
+          pct: Math.round((done / total) * 100), tasks: dTasks, ...rowNote(dTasks) };
+      })
+    : [];
+
+  function openDrill(row) {
+    setDrill({ title: row.name, list: row.tasks });
+  }
+
+  return (
+    <div>
+      <h1 className="text-xl font-extrabold mb-5">تقرير التشغيل اليومي</h1>
+
+      {attention.length > 0 && (
+        <div className="rounded-2xl border border-red-900/50 bg-red-950/20 p-5 mb-6">
+          <div className="text-sm font-bold mb-3 flex items-center gap-2 text-red-300">
+            <AlertTriangle size={15} /> مهام تحتاج انتباه ({attention.length})
+          </div>
+          <div className="space-y-2">
+            {attention.map((t) => {
+              const meta = STATUS_META[t.status];
+              return (
+                <button key={t.id} onClick={() => setViewTask(t)} className="w-full flex items-center justify-between text-sm">
+                  <span className="text-slate-300"><b>{t.title}</b> · {employeeName(t.assignedTo)}</span>
+                  <span className="text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0" style={{ color: meta.color, background: meta.bg }}>
+                    {meta.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
+        <StatCard label="نسبة إنجاز المهام" value={kpis.completion} suffix="%" color="#2DD4BF" />
+        <StatCard label="مؤشر الجودة" value={kpis.quality} suffix="%" color="#34D399" />
+        <StatCard label="مهام متأخرة" value={kpis.late} color="#FBBF24" />
+        <StatCard label="ملاحظات مفتوحة" value={kpis.openNotes} color="#F87171" />
+        <StatCard label="نسبة اعتماد المشرف" value={kpis.approvalRate ?? "—"} suffix={kpis.approvalRate !== null ? "%" : ""} color="#818CF8" />
+        <StatCard label="متوسط إغلاق الإجراء" value={kpis.avgCorrectiveMinutes ?? "—"} suffix={kpis.avgCorrectiveMinutes !== null ? " د" : ""} color="#F472B6" />
+      </div>
+
+      <div className="rounded-2xl border border-slate-900 bg-slate-900/40 p-5 mb-6">
+        <div className="text-sm font-bold mb-3">اتجاه الأداء (آخر 4 أيام)</div>
+        <TrendChart points={trendPoints} />
+      </div>
+
+      <BreakdownList title="الأداء حسب الموظف — اضغط على الاسم لعرض مهامه" rows={employeeRows} onSelect={openDrill} />
+      <BreakdownList title="الأداء حسب القسم — اضغط على القسم لعرض مهامه" rows={departmentRows} onSelect={openDrill} />
+
+      <div className="rounded-2xl border border-slate-900 bg-slate-900/40 p-5">
+        <div className="text-sm font-bold mb-4">الإجراءات التصحيحية</div>
+        {corrective.length === 0 ? (
+          <div className="text-sm text-slate-500">لا توجد إجراءات تصحيحية مسجّلة بعد</div>
+        ) : (
+          <div className="space-y-2.5">
+            {corrective.map((c) => (
+              <div key={c.id} className="rounded-xl border border-slate-800 p-3.5 flex items-center justify-between">
+                <div>
+                  <div className="text-sm font-bold">{c.title}</div>
+                  <div className="text-xs text-slate-500 mt-1">المسؤول: {c.responsible} · الموعد: {c.due}</div>
+                  {c.note && <div className="text-xs text-slate-400 mt-1">ملاحظة: {c.note}</div>}
+                </div>
+                {c.status === "closed" ? (
+                  <span className="text-xs font-bold px-3 py-1 rounded-full text-emerald-300 bg-emerald-950">مغلقة</span>
+                ) : (
+                  <button onClick={() => onCloseCorrective(c.id)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-teal-400 text-slate-950">
+                    اعتماد الإغلاق
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {drill && (
+        <TaskListModal
+          title={drill.title}
+          tasks={drill.list}
+          departmentName={departmentName}
+          employeeName={employeeName}
+          onClose={() => setDrill(null)}
+          onSelectTask={(t) => setViewTask(t)}
+        />
+      )}
+      {viewTask && (
+        <TaskDetailModal task={viewTask} departmentName={departmentName} employeeName={employeeName} onClose={() => setViewTask(null)} />
+      )}
+    </div>
+  );
+}
+
+// ---------------- Add task / user modals ----------------
+
+function ModalShell({ title, onClose, children }) {
+  return (
+    <div className="fixed inset-0 z-40 bg-black/60 flex items-end md:items-center justify-center p-0 md:p-4">
+      <div className="bg-slate-950 border border-slate-800 rounded-t-2xl md:rounded-2xl w-full md:max-w-sm p-5 max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="font-extrabold text-base">{title}</h2>
+          <button onClick={onClose} className="text-slate-500"><X size={20} /></button>
+        </div>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function Field({ label, children }) {
+  return (
+    <div className="mb-3">
+      <label className="text-xs text-slate-400 mb-1.5 block">{label}</label>
+      {children}
+    </div>
+  );
+}
+
+const inputCls = "w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-slate-100 outline-none focus:border-teal-500";
+
+function AddTaskModal({ employees, departments, onClose, onSubmit }) {
+  const [title, setTitle] = useState("");
+  const [time, setTime] = useState("");
+  const [assignedTo, setAssignedTo] = useState(employees[0]?.id || "");
+  const [standardLabel, setStandardLabel] = useState("");
+  const [day, setDay] = useState(DAYS[0]);
+  const [shift, setShift] = useState(employees[0]?.shift || SHIFTS[0]);
+
+  const employeeBranch = employees.find((e) => e.id === assignedTo)?.branchId;
+  const branchDepartments = departments.filter((d) => !employeeBranch || d.branchId === employeeBranch);
+  const [departmentId, setDepartmentId] = useState(branchDepartments[0]?.id || "");
+
+  function pickEmployee(id) {
+    setAssignedTo(id);
+    const emp = employees.find((e) => e.id === id);
+    if (emp?.shift) setShift(emp.shift);
+    const opts = departments.filter((d) => d.branchId === emp?.branchId);
+    setDepartmentId(opts[0]?.id || "");
+  }
+
+  return (
+    <ModalShell title="إضافة مهمة يومية" onClose={onClose}>
+      <Field label="عنوان المهمة">
+        <input className={inputCls} value={title} onChange={(e) => setTitle(e.target.value)} placeholder="مثال: تنظيف ماكينة القهوة" />
+      </Field>
+      <Field label="إسناد إلى">
+        <select className={inputCls} value={assignedTo} onChange={(e) => pickEmployee(e.target.value)}>
+          {employees.map((e) => (<option key={e.id} value={e.id}>{e.name} — {ROLE_LABEL[e.role]}</option>))}
+        </select>
+      </Field>
+      <Field label="القسم">
+        {branchDepartments.length === 0 ? (
+          <div className="text-xs text-amber-400">لا يوجد أقسام لفرع هذا الموظف بعد — أضف قسم من تبويب "الأقسام" أولاً</div>
+        ) : (
+          <select className={inputCls} value={departmentId} onChange={(e) => setDepartmentId(e.target.value)}>
+            {branchDepartments.map((d) => (<option key={d.id} value={d.id}>{d.name}</option>))}
+          </select>
+        )}
+      </Field>
+      <Field label="الوقت">
+        <input className={inputCls} value={time} onChange={(e) => setTime(e.target.value)} placeholder="مثال: 5:00 م" />
+      </Field>
+      <div className="grid grid-cols-2 gap-3">
+        <Field label="اليوم">
+          <select className={inputCls} value={day} onChange={(e) => setDay(e.target.value)}>
+            {DAYS.map((d) => (<option key={d} value={d}>{d}</option>))}
+          </select>
+        </Field>
+        <Field label="الوردية">
+          <select className={inputCls} value={shift} onChange={(e) => setShift(e.target.value)}>
+            {SHIFTS.map((s) => (<option key={s} value={s}>{s}</option>))}
+          </select>
+        </Field>
+      </div>
+      <Field label="المعيار المطلوب">
+        <input className={inputCls} value={standardLabel} onChange={(e) => setStandardLabel(e.target.value)} placeholder="مثال: نظيفة وجاهزة للاستخدام" />
+      </Field>
+      <button disabled={!title || !assignedTo || !departmentId}
+        onClick={() => onSubmit({ title, departmentId, time, assignedTo, standardLabel, day, shift })}
+        className="w-full bg-teal-400 disabled:opacity-40 text-slate-950 font-bold py-2.5 rounded-xl mt-2">
+        إضافة المهمة
+      </button>
+    </ModalShell>
+  );
+}
+
+function randomPin() {
+  return String(Math.floor(1000 + Math.random() * 9000));
+}
+
+function AddUserModal({ employees, branches, onClose, onSubmit }) {
+  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
+  const [role, setRole] = useState("employee");
+  const [shift, setShift] = useState("صباحية");
+  const [pin, setPin] = useState(randomPin());
+  const [branchId, setBranchId] = useState(branches[0]?.id || "");
+  const supervisors = employees.filter((e) => e.role === "supervisor" && (branches.length <= 1 || e.branchId === branchId));
+  const [supervisorId, setSupervisorId] = useState(supervisors[0]?.id || "");
+
+  function pickBranch(id) {
+    setBranchId(id);
+    const opts = employees.filter((e) => e.role === "supervisor" && e.branchId === id);
+    setSupervisorId(opts[0]?.id || "");
+  }
+
+  return (
+    <ModalShell title="إنشاء مستخدم جديد" onClose={onClose}>
+      <Field label="الاسم">
+        <input className={inputCls} value={name} onChange={(e) => setName(e.target.value)} placeholder="اسم الموظف" />
+      </Field>
+      <Field label="المسمى الوظيفي">
+        <input className={inputCls} value={title} onChange={(e) => setTitle(e.target.value)} placeholder="مثال: موظف مطبخ" />
+      </Field>
+      <Field label="مستوى الصلاحية">
+        <select className={inputCls} value={role} onChange={(e) => setRole(e.target.value)}>
+          <option value="employee">موظف</option>
+          <option value="supervisor">مشرف</option>
+          <option value="manager">مدير</option>
+          <option value="admin">مالك / إدارة</option>
+        </select>
+      </Field>
+      {role !== "admin" && role !== "manager" && branches.length > 1 && (
+        <Field label="الفرع">
+          <select className={inputCls} value={branchId} onChange={(e) => pickBranch(e.target.value)}>
+            {branches.map((b) => (<option key={b.id} value={b.id}>{b.name}</option>))}
+          </select>
+        </Field>
+      )}
+      {role !== "admin" && role !== "manager" && (
+        <Field label="الوردية">
+          <select className={inputCls} value={shift} onChange={(e) => setShift(e.target.value)}>
+            {SHIFTS.map((s) => (<option key={s} value={s}>{s}</option>))}
+          </select>
+        </Field>
+      )}
+      {role === "employee" && supervisors.length > 0 && (
+        <Field label="يتبع للمشرف">
+          <select className={inputCls} value={supervisorId} onChange={(e) => setSupervisorId(e.target.value)}>
+            {supervisors.map((s) => (<option key={s.id} value={s.id}>{s.name}</option>))}
+          </select>
+        </Field>
+      )}
+      <Field label="الرقم السري">
+        <div className="flex gap-2">
+          <input className={inputCls} value={pin} onChange={(e) => setPin(e.target.value.replace(/\D/g, "").slice(0, 4))} />
+          <button onClick={() => setPin(randomPin())} className="shrink-0 text-xs px-3 rounded-xl border border-slate-800 text-slate-400 hover:text-teal-300">
+            توليد
+          </button>
+        </div>
+      </Field>
+      <button disabled={!name || pin.length !== 4}
+        onClick={() => onSubmit({
+          name, title, role, pin,
+          shift: (role === "admin" || role === "manager") ? null : shift,
+          supervisorId: role === "employee" ? supervisorId : null,
+          branchId: (role === "admin" || role === "manager") ? null : branchId,
+        })}
+        className="w-full bg-teal-400 disabled:opacity-40 text-slate-950 font-bold py-2.5 rounded-xl mt-2">
+        إنشاء المستخدم
+      </button>
+    </ModalShell>
+  );
+}
+
+// ---------------- Employee app (phone frame) ----------------
+
+function EmployeeApp({ user, tasks, departmentName, onOpenTask }) {
+  const [screen, setScreen] = useState("home");
+  const myTasks = tasks.filter((t) => t.assignedTo === user.id);
+  const pendingTasks = myTasks.filter((t) => t.status !== "done" && t.status !== "non_compliant");
+  const doneTasks = myTasks.filter((t) => t.status === "done" || t.status === "non_compliant");
+  const topTask = pendingTasks[0];
+
+  return (
+    <div className="py-8 flex flex-col items-center gap-4">
+      <div className="w-[360px] rounded-[2.2rem] border-[6px] border-slate-800 bg-slate-950 shadow-2xl overflow-hidden">
+        <div className="h-6 flex items-center justify-center bg-slate-950">
+          <div className="w-24 h-4 bg-slate-900 rounded-full" />
+        </div>
+
+        <div className="h-[640px] overflow-y-auto px-4 pb-16 pt-2">
+          {screen === "home" && (
+            <div>
+              <div className="text-lg font-extrabold mb-0.5">أهلاً {user.name.split(" ")[0]}</div>
+              <div className="text-xs text-slate-500 mb-4">{user.title}</div>
+
+              <div className="grid grid-cols-2 gap-2.5 mb-5">
+                <StatCard label="مهام منجزة اليوم" value={doneTasks.length} color="#2DD4BF" />
+                <StatCard label="مهام متبقية" value={pendingTasks.length} color="#FBBF24" />
+              </div>
+
+              {topTask ? (
+                <div className="rounded-2xl border border-teal-900 bg-teal-950/40 p-4 mb-4">
+                  <div className="text-xs text-teal-400 font-bold mb-1.5">أهم مهمة الآن</div>
+                  <div className="font-bold text-sm mb-1">{topTask.title}</div>
+                  <div className="text-xs text-slate-400 mb-3">{departmentName(topTask.departmentId)} · {topTask.time}</div>
+                  <button onClick={() => onOpenTask(topTask)} className="w-full bg-teal-400 text-slate-950 font-bold text-sm py-2 rounded-xl">
+                    ابدأ المهمة
+                  </button>
+                </div>
+              ) : (
+                <div className="rounded-2xl border border-slate-900 bg-slate-900/40 p-4 mb-4 text-sm text-slate-400">
+                  لا توجد مهام معلّقة حالياً 🎉
+                </div>
+              )}
+
+              <div className="text-sm font-bold mb-2">مهامي اليوم</div>
+              <TaskList tasks={pendingTasks.filter((t) => t.day === "اليوم" || t.day === "دائمة")} departmentName={departmentName} onOpenTask={onOpenTask} />
+            </div>
+          )}
+
+          {screen === "tasks" && (
+            <div>
+              <div className="text-lg font-extrabold mb-1">مهامي</div>
+              <div className="text-xs text-slate-500 mb-4">وردية {user.shift || "—"}</div>
+              {DAYS.map((d) => {
+                const dayTasks = pendingTasks.filter((t) => t.day === d);
+                if (dayTasks.length === 0) return null;
+                return (
+                  <div key={d} className="mb-5">
+                    <div className="text-xs font-bold text-teal-400 mb-2">{d}</div>
+                    <TaskList tasks={dayTasks} departmentName={departmentName} onOpenTask={onOpenTask} />
+                  </div>
+                );
+              })}
+              {pendingTasks.length === 0 && <div className="text-sm text-slate-500">لا توجد مهام معلّقة 🎉</div>}
+            </div>
+          )}
+
+          {screen === "history" && (
+            <div>
+              <div className="text-lg font-extrabold mb-4">سجل المهام المنجزة</div>
+              {doneTasks.length === 0 ? (
+                <div className="text-sm text-slate-500">لا توجد مهام منجزة بعد</div>
+              ) : (
+                <div className="space-y-2">
+                  {doneTasks.map((t) => {
+                    const meta = STATUS_META[t.status];
+                    return (
+                      <div key={t.id} className="rounded-xl border border-slate-900 bg-slate-900/40 p-3.5">
+                        <div className="flex items-center justify-between mb-1">
+                          <div className="font-bold text-sm">{t.title}</div>
+                          <span className="text-[11px] font-bold px-2.5 py-1 rounded-full" style={{ color: meta.color, background: meta.bg }}>
+                            {meta.label}
+                          </span>
+                        </div>
+                        <div className="text-xs text-slate-500 mb-2">{departmentName(t.departmentId)} · أُنجزت الساعة {t.completedAt}</div>
+                        {t.photo && <img src={t.photo} alt="دليل التنفيذ" className="w-full h-28 object-cover rounded-lg border border-slate-800" />}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        <div className="h-14 border-t border-slate-900 flex items-center justify-around bg-slate-950">
+          <button onClick={() => setScreen("home")} className="flex flex-col items-center gap-0.5">
+            <Home size={18} className={screen === "home" ? "text-teal-400" : "text-slate-600"} />
+            <span className={`text-[10px] ${screen === "home" ? "text-teal-400" : "text-slate-600"}`}>الرئيسية</span>
+          </button>
+          <button onClick={() => setScreen("tasks")} className="flex flex-col items-center gap-0.5">
+            <ClipboardList size={18} className={screen === "tasks" ? "text-teal-400" : "text-slate-600"} />
+            <span className={`text-[10px] ${screen === "tasks" ? "text-teal-400" : "text-slate-600"}`}>المهام</span>
+          </button>
+          <button onClick={() => setScreen("history")} className="flex flex-col items-center gap-0.5">
+            <History size={18} className={screen === "history" ? "text-teal-400" : "text-slate-600"} />
+            <span className={`text-[10px] ${screen === "history" ? "text-teal-400" : "text-slate-600"}`}>السجل</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TaskList({ tasks, departmentName, onOpenTask }) {
+  if (tasks.length === 0) return <div className="text-sm text-slate-500">لا توجد مهام معلّقة 🎉</div>;
+  return (
+    <div className="space-y-2">
+      {tasks.map((t) => {
+        const meta = STATUS_META[t.status];
+        return (
+          <button key={t.id} onClick={() => onOpenTask(t)}
+            className="w-full text-right rounded-xl border border-slate-900 bg-slate-900/40 p-3.5 flex items-center justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <div className="font-bold text-sm">{t.title}</div>
+                <ShiftBadge shift={t.shift} />
+              </div>
+              <div className="text-xs text-slate-500 flex items-center gap-1">
+                <Clock size={11} /> {departmentName(t.departmentId)} · {t.time}
+              </div>
+            </div>
+            <span className="text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0" style={{ color: meta.color, background: meta.bg }}>
+              {meta.label}
+            </span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+// ---------------- Task execution modal ----------------
+
+function CameraCapture({ photo, onCapture, onClear }) {
+  const [active, setActive] = useState(false);
+  const [error, setError] = useState("");
+  const videoRef = useRef(null);
+  const canvasRef = useRef(null);
+  const streamRef = useRef(null);
+
+  async function openCamera() {
+    setError("");
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
+      streamRef.current = stream;
+      setActive(true);
+      setTimeout(() => {
+        if (videoRef.current) videoRef.current.srcObject = stream;
+      }, 0);
+    } catch (err) {
+      setError("تعذّر الوصول للكاميرا — تأكد من الموافقة على الإذن من المتصفح");
+    }
+  }
+
+  function closeStream() {
+    streamRef.current?.getTracks().forEach((tr) => tr.stop());
+    streamRef.current = null;
+    setActive(false);
+  }
+
+  function takeShot() {
+    const video = videoRef.current;
+    const canvas = canvasRef.current;
+    if (!video || !canvas) return;
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext("2d").drawImage(video, 0, 0);
+    const dataUrl = canvas.toDataURL("image/jpeg", 0.85);
+    onCapture(dataUrl);
+    closeStream();
+  }
+
+  if (photo) {
+    return (
+      <div className="mb-3">
+        <img src={photo} alt="دليل التنفيذ" className="w-full h-40 object-cover rounded-xl border border-teal-700 mb-2" />
+        <button onClick={onClear} className="w-full flex items-center justify-center gap-2 border border-slate-800 text-slate-400 rounded-xl py-2 text-xs">
+          <Camera size={14} /> إعادة التقاط الصورة
+        </button>
+      </div>
+    );
+  }
+
+  if (active) {
+    return (
+      <div className="mb-3">
+        <video ref={videoRef} autoPlay playsInline className="w-full h-40 object-cover rounded-xl border border-teal-700 mb-2 bg-black" />
+        <canvas ref={canvasRef} className="hidden" />
+        <div className="flex gap-2">
+          <button onClick={takeShot} className="flex-1 bg-teal-400 text-slate-950 font-bold rounded-xl py-2 text-sm">التقاط</button>
+          <button onClick={closeStream} className="px-4 border border-slate-800 text-slate-400 rounded-xl text-sm">إلغاء</button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mb-3">
+      <button onClick={openCamera} className="w-full flex items-center justify-center gap-2 border border-slate-800 text-slate-400 rounded-xl py-2.5 text-sm">
+        <Camera size={16} /> فتح الكاميرا وإرفاق صورة
+      </button>
+      {error && <div className="text-[11px] text-red-400 mt-1.5">{error}</div>}
+    </div>
+  );
+}
+
+function TaskExecuteModal({ task, departmentName, onClose, onSubmit }) {
+  const [result, setResult] = useState("");
+  const [note, setNote] = useState("");
+  const [photo, setPhoto] = useState(null);
+
+  const hasNumericStandard = typeof task.standardMin === "number";
+  let compliant = true;
+  if (hasNumericStandard && result !== "") {
+    const val = parseFloat(result);
+    compliant = !isNaN(val) && val >= task.standardMin && val <= task.standardMax;
+  }
+
+  return (
+    <ModalShell title={task.title} onClose={onClose}>
+      <div className="text-xs text-slate-500 mb-4">{departmentName(task.departmentId)} · {task.time}</div>
+
+      <div className="rounded-xl bg-slate-900 border border-slate-800 p-3 mb-4 flex items-center gap-2 text-sm">
+        <ThermometerSun size={16} className="text-teal-400 shrink-0" />
+        <span className="text-slate-300">{task.standardLabel}</span>
+      </div>
+
+      {hasNumericStandard ? (
+        <Field label={`النتيجة (${task.unit})`}>
+          <input className={inputCls} type="number" step="0.1" value={result}
+            onChange={(e) => setResult(e.target.value)} placeholder="مثال: 3.4" />
+        </Field>
+      ) : (
+        <Field label="حالة التنفيذ">
+          <div className="flex gap-2">
+            <button onClick={() => setResult("مطابق")}
+              className={`flex-1 py-2 rounded-xl text-sm font-bold border ${result === "مطابق" ? "bg-emerald-500/20 border-emerald-500 text-emerald-300" : "border-slate-800 text-slate-400"}`}>
+              مطابق
+            </button>
+            <button onClick={() => setResult("غير مطابق")}
+              className={`flex-1 py-2 rounded-xl text-sm font-bold border ${result === "غير مطابق" ? "bg-red-500/20 border-red-500 text-red-300" : "border-slate-800 text-slate-400"}`}>
+              غير مطابق
+            </button>
+          </div>
+        </Field>
+      )}
+
+      {result !== "" && (
+        <div className="text-xs font-bold px-3 py-2 rounded-lg mb-3 inline-flex items-center gap-1.5"
+          style={{
+            color: (hasNumericStandard ? compliant : result === "مطابق") ? "#34D399" : "#F87171",
+            background: (hasNumericStandard ? compliant : result === "مطابق") ? "rgba(52,211,153,0.12)" : "rgba(248,113,113,0.12)",
+          }}>
+          {(hasNumericStandard ? compliant : result === "مطابق") ? <CheckCircle2 size={14} /> : <AlertTriangle size={14} />}
+          {(hasNumericStandard ? compliant : result === "مطابق") ? "ضمن المعيار" : "غير مطابق للمعيار"}
+        </div>
+      )}
+
+      <CameraCapture photo={photo} onCapture={setPhoto} onClear={() => setPhoto(null)} />
+
+      {!(hasNumericStandard ? compliant : result === "مطابق") && result !== "" && (
+        <Field label="وصف المشكلة / ملاحظة">
+          <textarea className={inputCls} rows={2} value={note} onChange={(e) => setNote(e.target.value)} placeholder="اكتب وصف المشكلة..." />
+        </Field>
+      )}
+
+      <button disabled={result === ""}
+        onClick={() => onSubmit(task.id, { result, compliant: hasNumericStandard ? compliant : result === "مطابق", note, photo })}
+        className="w-full bg-teal-400 disabled:opacity-40 text-slate-950 font-bold py-2.5 rounded-xl mt-1">
+        إتمام المهمة
+      </button>
+    </ModalShell>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<CheckflowDemo />);
+</script>
+</body>
+</html>
